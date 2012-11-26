@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def title(title)
+   	content_tag(:h1, title, :class => 'page_title')
+  end
+
   def flash_messages
     return if flash.empty?
 
