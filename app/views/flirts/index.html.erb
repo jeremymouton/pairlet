@@ -1,0 +1,19 @@
+<h1>Listing flirts</h1>
+
+<table class="table">
+  <tr>
+    <th>Handle</th>
+    <th></th>
+  </tr>
+
+<% @flirts.each do |flirt| %>
+  <tr>
+    <td><%= flirt.handle %></td>
+    <td><%= link_to 'Destroy', flirt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Flirt', new_flirt_path %>
