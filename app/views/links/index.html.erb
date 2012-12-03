@@ -1,11 +1,9 @@
-<%= title "Listing links" %>
+<%= title "Listing accounts" %>
 
 <table class="table">
   <tr>
     <th>Provider</th>
     <th>Handle</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -13,8 +11,6 @@
   <tr>
     <td><%= link.provider %></td>
     <td><%= link.handle %></td>
-    <td><%= link_to 'Show', link %></td>
-    <td><%= link_to 'Edit', edit_link_path(link) %></td>
     <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

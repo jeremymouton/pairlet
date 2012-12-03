@@ -1,12 +1,20 @@
 FlirtRails::Application.routes.draw do
+  
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout" }
+  
   resources :links
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
+  match "flirting" => "users#following", :as => 'flirts'
 
-    devise_for :users, path_names: { sign_in: "login", sign_out: "logout" }
+  resources :relationships, only: [:create, :destroy]
 
-  get "pages/index"
   get "pages/about", :as => 'about'
-  get "pages/terms"
+  get "pages/terms", :as => 'terms'
 
   root :to => 'pages#index'
 

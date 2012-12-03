@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121125225309) do
+ActiveRecord::Schema.define(:version => 20121126020900) do
 
   create_table "links", :force => true do |t|
     t.string   "provider"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(:version => 20121125225309) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "links", ["user_id"], :name => "index_links_on_user_id"
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "flirter_id"
+    t.integer  "flirted_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "relationships", ["flirted_id"], :name => "index_relationships_on_flirted_id"
+  add_index "relationships", ["flirter_id", "flirted_id"], :name => "index_relationships_on_flirter_id_and_flirted_id", :unique => true
+  add_index "relationships", ["flirter_id"], :name => "index_relationships_on_flirter_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

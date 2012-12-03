@@ -12,6 +12,7 @@
 					<% if user_signed_in? %>
 						<li><%= link_to 'My List', '#' %></li>
 						<li><%= link_to 'My Info', links_path %></li>
+						<li><%= link_to 'My Flirts', flirts_path %></li>
 					<% else %>
 						<li><%= link_to 'Home', root_path %></li>
 						<li><%= link_to 'About', about_path %></li>

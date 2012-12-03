@@ -3,5 +3,5 @@ class Link < ActiveRecord::Base
   belongs_to :user
 
   validates :provider, presence: true
-  validates :handle, presence: true, uniqueness: true
+  validates_uniqueness_of(:handle, :scope => :provider)
 end
