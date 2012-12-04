@@ -2,7 +2,6 @@ FlirtRails::Application.routes.draw do
   
   resources :flirts
 
-
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" }
   
   resources :links
@@ -12,7 +11,7 @@ FlirtRails::Application.routes.draw do
     end
   end
 
-  match "flirting" => "users#following", :as => 'flirting'
+  match "connections" => "users#following", :as => 'connections'
 
   resources :relationships, only: [:create, :destroy]
 

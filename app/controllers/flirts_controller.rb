@@ -11,10 +11,6 @@ class FlirtsController < ApplicationController
     @flirt = Flirt.new
   end
 
-  def edit
-    @flirt = Flirt.find(params[:id])
-  end
-
   def create
     @flirt = current_user.flirts.new(params[:flirt])
 

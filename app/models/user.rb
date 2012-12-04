@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  has_many :links, dependent: :destroy
-  has_many :flirts, dependent: :destroy
+  has_many :links, dependent: :destroy, :order => 'created_at DESC'
+  has_many :flirts, dependent: :destroy, :order => 'created_at DESC'
 
   has_many :flirted_users, through: :relationships, source: :flirted
   has_many :flirters, through: :reverse_relationships, source: :flirter
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   
   # User relationships
   def following?(other_user)
-    relationships.find_by_followed_id(other_user.id)
+    relationships.find_by_flirted_id(other_user.id)
   end
 
   def follow!(other_user)
@@ -29,7 +29,15 @@ class User < ActiveRecord::Base
   end
 
   def unfollow!(other_user)
-    relationships.find_by_followed_id(other_user.id).destroy
+    relationships.find_by_flirted_id(other_user.id).destroy
+  end
+
+  def following_me?(other_user)
+    other_user.relationships.where(:flirted_id => self.id).any?
+  end
+
+  def mutual_friends?(other_user)
+    following?(other_user) && following_me?(other_user)
   end
 
 end

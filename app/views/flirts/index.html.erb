@@ -4,11 +4,13 @@
   <tr>
     <th>Handle</th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @flirts.each do |flirt| %>
   <tr>
     <td><%= flirt.handle %></td>
+    <td><%= time_ago_in_words(flirt.created_at) %> ago</td>
     <td><%= link_to 'Destroy', flirt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

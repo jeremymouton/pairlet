@@ -20,7 +20,7 @@ class LinksController < ApplicationController
 
     if @link.valid?
       @link.save
-      redirect_to @link, notice: 'Account was successfully created.'
+      redirect_to links_path, notice: 'Account was successfully created.'
     else
       render action: "new"
     end
