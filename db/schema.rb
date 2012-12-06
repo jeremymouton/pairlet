@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121206034327) do
+ActiveRecord::Schema.define(:version => 20121206074953) do
 
   create_table "flirts", :force => true do |t|
     t.string   "handle"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20121206034327) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "provider"
+    t.boolean  "matched"
   end
 
   add_index "flirts", ["user_id"], :name => "index_flirts_on_user_id"
