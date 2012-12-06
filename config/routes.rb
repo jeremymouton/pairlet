@@ -11,7 +11,7 @@ FlirtRails::Application.routes.draw do
     end
   end
 
-  match "connections" => "users#following", :as => 'connections'
+  match "connections" => "users#mutual_flirts", :as => 'connections'
 
   resources :relationships, only: [:create, :destroy]
 

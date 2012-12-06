@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121203012052) do
+ActiveRecord::Schema.define(:version => 20121206034327) do
 
   create_table "flirts", :force => true do |t|
     t.string   "handle"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "provider"
   end
 
   add_index "flirts", ["user_id"], :name => "index_flirts_on_user_id"

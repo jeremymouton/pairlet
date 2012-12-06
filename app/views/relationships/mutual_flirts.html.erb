@@ -1,6 +1,7 @@
+<%= title @title %>
 <div class="row">
   <div class="span8">
-    <% if @users.any? %>
+    <% unless @users.empty? %>
       <ul class="users">
         <%= render @users %>
       </ul>

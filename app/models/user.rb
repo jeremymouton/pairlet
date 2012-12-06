@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
     other_user.relationships.where(:flirted_id => self.id).any?
   end
 
-  def mutual_friends?(other_user)
+  def mutual_flirts?(other_user)
     following?(other_user) && following_me?(other_user)
   end
 
