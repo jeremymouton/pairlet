@@ -2,6 +2,9 @@ class Link < ActiveRecord::Base
   attr_accessible :handle, :provider
   belongs_to :user
 
+  # Validations
+  PROVIDERS = %w(twitter facebook phone email)
+  validates :provider, :inclusion => {:in => PROVIDERS}
   validates_presence_of :provider, :handle
   validates_uniqueness_of(:handle, :scope => :provider)
 

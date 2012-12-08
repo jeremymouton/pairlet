@@ -5,6 +5,10 @@ FlirtRails::Application.configure do
   TWITTER_KEY = "tGoCaOabmBTK5rjHkOpbQ"
   TWITTER_SECRET = "oPL6ZQgXxXtkl87EA6yHO2LmpbmMKFgJqHvCaJvvDc"
 
+  # FACEBOOK APP KEYS
+  FACEBOOK_KEY = "299225296863676"
+  FACEBOOK_SECRET = "d60c24112584c9e4b7df6fa0a1e1c568"
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

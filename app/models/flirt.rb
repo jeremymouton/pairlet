@@ -3,7 +3,9 @@ class Flirt < ActiveRecord::Base
   belongs_to :user
   attr_accessible :user_id, :provider, :handle
 
-  validates_presence_of :provider, :handle
+  # Validations
+  PROVIDERS = %w(twitter facebook phone email)
+  validates :provider, :inclusion => {:in => PROVIDERS}
 
   def default_values
     self.matched ||= 'false'
