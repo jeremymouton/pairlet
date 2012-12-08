@@ -11,7 +11,7 @@ namespace :flirt do
   task :all => [:welcome, :find_handles]
 
   task :welcome do
-    puts "Well, hello there."
+    puts "This rake task finds all flirted handles and set a Flirter->Flirted relationship if the flirt handle matches a user's handle (in the Links table)."
   end
 
   # -----
@@ -23,7 +23,8 @@ namespace :flirt do
   # and printa heart. 
   #
 
-  desc "Find all flirted handles"
+  desc "Find all flirted handles and set relationships"
+
   task :find_handles => :environment do
     
     @flirts = Flirt.where(matched: false)
@@ -59,9 +60,9 @@ namespace :flirt do
 
     # Print the results
     puts "-----------"
-    print "#{@flirts.count} flirts total, with #{@matching_flirts.count} matches discovered."
+    print "#{@flirts.count} flirts processed, with #{@matching_flirts.count} matches discovered."
     
-    ## Print a heart for every flirt match
+    ## Print a heart for every matched handle
     if @matching_flirts.count > 0
       @matching_flirts.each do
         print <<-EOF
