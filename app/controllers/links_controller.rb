@@ -16,14 +16,17 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = current_user.links.create!(params[:link])
+    link = current_user.links.from_omniauth(env["omniauth.auth"])
+    redirect_to links_path, notice: "Signed in!"
+    
+    # @link = current_user.links.create!(params[:link])
 
-    if @link.valid?
-      @link.save
-      redirect_to links_path, notice: 'Account was successfully created.'
-    else
-      render action: "new"
-    end
+    # if @link.valid?
+    #   @link.save
+    #   redirect_to links_path, notice: 'Account was successfully created.'
+    # else
+    #   render action: "new"
+    # end
   end
 
   def destroy

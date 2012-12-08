@@ -20,6 +20,9 @@ FlirtRails::Application.routes.draw do
 
   root :to => 'pages#index'
 
+  # OmniAuth callback
+  match 'auth/:provider/callback', to: 'links#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

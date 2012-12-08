@@ -1,7 +1,7 @@
 class Flirt < ActiveRecord::Base
   before_save :default_values
   belongs_to :user
-  attr_accessible :provider, :handle
+  attr_accessible :user_id, :provider, :handle
 
   validates_presence_of :provider, :handle
 

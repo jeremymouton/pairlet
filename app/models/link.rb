@@ -2,6 +2,18 @@ class Link < ActiveRecord::Base
   attr_accessible :handle, :provider
   belongs_to :user
 
-  validates :provider, presence: true
+  validates_presence_of :provider, :handle
   validates_uniqueness_of(:handle, :scope => :provider)
+
+  def self.from_omniauth(auth)
+    where(auth.slice("provider", "handle")).first || create_from_omniauth(auth)
+  end
+
+  def self.create_from_omniauth(auth)
+    create! do |link|
+      link.provider = auth["provider"]
+      link.handle = auth["info"]["nickname"]
+    end
+  end
+
 end
