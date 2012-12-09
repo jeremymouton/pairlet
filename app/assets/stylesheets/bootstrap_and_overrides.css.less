@@ -31,14 +31,46 @@
 // @linkColor: #ff0000;
 
 /* bootstrap overrides */
+
+.alert {
+  background: none;
+  border: none;
+  font-size: 13px;
+}
+
 .alert-alert {
-  background-color: #F2DEDE;
-  border-color: #EED3D7;
   color: #B94A48;
 }
 
 .alert-notice {
-  background-color: #DFF0D8;
-  border-color: #D6E9C6;
   color: #468847;
+}
+
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: 0;
+  float: none;
+  margin-left: 10px;
+}
+
+ul.dropdown-menu {
+  background-color: none;
+  border: none;
+  .border-radius(none);
+  .box-shadow(none);
+  min-width: 100px;
+  text-align: left;
+
+  li {
+    text-align: left;
+    a {
+      padding:0;
+      text-align: left;
+      &:hover {
+        color: @black;
+        background: none;
+      }
+    }
+  }
 }

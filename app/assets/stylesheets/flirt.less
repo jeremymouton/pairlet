@@ -3,17 +3,43 @@
 //
 // -------------
 
+body {
+  padding-top: 30px;
+}
+
 a {
-    color: @red;
-    &:hover {
-      color: @redDark;
-      text-decoration: none;
-    }
+  color: @red;
+  &:hover {
+    color: @redDark;
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-size: 27px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+  margin-top: 0;
+  line-height: 21px;
+  font-size: 21px;
+}
+
+.btn,
+table,
+select,
+input[type=text],
+input[type=email],
+input[type=password] {
+  font-size: 13px;
 }
 
 .header {
   text-align: center;
-
   // -----------
   // LOGO STYLES
 
@@ -100,6 +126,27 @@ a {
 
 // --------------
 
+/* Navigation */
+
+ul.topnav {
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    
+    a {
+      font-size: 13px;
+    }
+    
+    &:first-child {
+      padding-left: none;
+    }
+  }
+}
+
 /* Footer */
 .footer {
   padding-top: 60px;
@@ -110,7 +157,37 @@ a {
     font-weight: 200;
     text-align: center;
     a {
-        color: #aaa;
+      color: #aaa;
     }
+  }
+}
+
+/* Edit user */
+
+form#edit_user {
+  font-weight: 200;
+}
+
+/* Errors */
+
+#error_explanation {
+  margin-bottom: 10px;
+  font-size: 13px;
+  h2 {
+    color: @red;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+}
+
+.field_with_errors {
+  input {
+    border-color: rgba(198, 24, 39, 0.8);
+    .box-shadow(0px 0px 3px rgba(198, 24, 39, 0.8));
   }
 }

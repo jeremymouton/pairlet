@@ -18,8 +18,10 @@
 </head>
 <body>
 
-	<%= render :partial => 'layouts/header' %>
-	<%= flash_messages %>
+	<div class="container-fluid header">
+    <%= render :partial => 'layouts/header' %>
+    <%= flash_messages %>
+  </div>
 
 	<div class="container">
 		<%= yield %>

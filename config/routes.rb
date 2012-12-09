@@ -7,10 +7,7 @@ FlirtRails::Application.routes.draw do
   resources :users
 
   root :to => 'pages#index'
-
-  namespace :user do
-    root :to => 'flirts#index'
-  end  
+  match 'flirts' => 'flirts#index', :as => 'user_root'
 
   match "connections" => "users#mutual_flirts", :as => 'connections'
 
