@@ -5,10 +5,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
+
+
+  # Relationships
   has_many :links, dependent: :destroy, :order => 'created_at DESC'
   has_many :flirts, dependent: :destroy, :order => 'created_at DESC'
 
@@ -18,6 +23,18 @@ class User < ActiveRecord::Base
   has_many :reverse_relationships, foreign_key: "flirted_id",
                                    class_name: "Relationship",
                                    dependent: :destroy
+
+
+
+
+  # Confirmation email after user signup
+  after_create :send_welcome_email
+  def send_welcome_email
+     UserMailer.signup_confirmation(self).deliver
+  end
+
+
+
   
   # User relationships
   def following?(other_user)

@@ -1,15 +1,10 @@
 FlirtRails::Application.routes.draw do
-  
-  resources :flirts
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout" }
-  
+
+  resources :flirts
   resources :links
-  resources :users do
-    member do
-      get :following, :followers
-    end
-  end
+  resources :users
 
   match "connections" => "users#mutual_flirts", :as => 'connections'
 
@@ -21,7 +16,7 @@ FlirtRails::Application.routes.draw do
   root :to => 'pages#index'
 
   # OmniAuth callback
-  match 'auth/:provider/callback', to: 'links#create'
+  match 'auth/:provider/callback' => 'links#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

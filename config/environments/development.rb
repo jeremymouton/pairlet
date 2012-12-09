@@ -1,13 +1,8 @@
 FlirtRails::Application.configure do
+
+  KEYS = YAML.load_file("#{::Rails.root}/config/third_party_keys.yml")[::Rails.env]
+  
   # Settings specified here will take precedence over those in config/application.rb
-
-  # TWITTER APP KEYS
-  TWITTER_KEY = "tGoCaOabmBTK5rjHkOpbQ"
-  TWITTER_SECRET = "oPL6ZQgXxXtkl87EA6yHO2LmpbmMKFgJqHvCaJvvDc"
-
-  # FACEBOOK APP KEYS
-  FACEBOOK_KEY = "299225296863676"
-  FACEBOOK_SECRET = "d60c24112584c9e4b7df6fa0a1e1c568"
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -22,7 +17,25 @@ FlirtRails::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  # ####
+  # http://railscasts.com/episodes/61-sending-email-revised?autoplay=true
+  #
+  # Change mail delvery to either :smtp, :sendmail, :file, :test
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: KEYS['gmail_username'],
+    password: KEYS['gmail_password']
+  }
+
+  # Specify what domain to use for mailer URLs
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

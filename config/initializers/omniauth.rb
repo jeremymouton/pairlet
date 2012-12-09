@@ -4,6 +4,6 @@
 OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :twitter, TWITTER_KEY, TWITTER_SECRET
-  provider :facebook, FACEBOOK_KEY, FACEBOOK_SECRET
+  provider :twitter, KEYS['twitter_key'], KEYS['twitter_secret']
+  provider :facebook, KEYS['facebook_key'], KEYS['facebook_secret']
 end

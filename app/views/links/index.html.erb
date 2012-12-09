@@ -8,11 +8,7 @@
   </tr>
 
 <% @links.each do |link| %>
-  <tr>
-    <td><%= link.provider %></td>
-    <td><%= link.handle %></td>
-    <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <%= render 'link', :link => link %>
 <% end %>
 </table>
 <br />
