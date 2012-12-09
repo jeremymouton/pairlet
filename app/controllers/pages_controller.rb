@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
+
+  layout 'landing/homepage'
+
   def index
-  	# flash[:success] = 'Welcome'
+    # flash[:success] = 'Welcome'
   end
 
   def about

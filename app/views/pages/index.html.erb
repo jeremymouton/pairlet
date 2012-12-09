@@ -1,4 +1,23 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="pixelate">
+  <div class="container-fluid">
+      <div class="row-fluid align-center">
+        <div class="span12">
+          <h1>Ever wondered how a crush felt about you?</h1>
+          <p>Flirt can let you know when there is mutual interest.<br />
+            Connect your Twitter and Facebook accounts, then start adding your Flirts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary' %>
+
+<div class="container-fluid">
+  <div class="row-fluid align-center signup">
+    <h2>Sign up, it’s free.</h2>
+    <p><%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-red' %></p>
+    <p>
+      <small>Already have an account? <%= link_to "Sign in", '/users/login' %></small>
+    </p>
+  </div>
+</div>

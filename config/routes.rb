@@ -6,14 +6,18 @@ FlirtRails::Application.routes.draw do
   resources :links
   resources :users
 
+  root :to => 'pages#index'
+
+  namespace :user do
+    root :to => 'flirts#index'
+  end  
+
   match "connections" => "users#mutual_flirts", :as => 'connections'
 
   resources :relationships, only: [:create, :destroy]
 
   get "pages/about", :as => 'about'
   get "pages/terms", :as => 'terms'
-
-  root :to => 'pages#index'
 
   # OmniAuth callback
   match 'auth/:provider/callback' => 'links#create'

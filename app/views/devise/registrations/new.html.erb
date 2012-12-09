@@ -4,22 +4,22 @@
   <%= devise_error_messages! %>
 
   <div class="span3">
-  	<%= f.label :email %>
-	<%= f.email_field :email %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="span3">
-  	
-  	<p>
-  		<%= f.label :password %>
-		<%= f.password_field :password %>
+    
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
 
-		<%= f.label :password_confirmation %>
-	  	<%= f.password_field :password_confirmation %>
-  	</p>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </p>
 
-  	<p><%= f.submit "Sign up", :class => 'btn btn-primary' %></p>
-  	<p><%= render "devise/shared/links" %></p>
+    <p><%= f.submit "Sign up", :class => 'btn btn-primary' %></p>
+    <p><%= render "devise/shared/links" %></p>
   </div>
 
 <% end %>

@@ -1,0 +1,116 @@
+// -------------
+// FLIRT APP STYLES
+//
+// -------------
+
+a {
+    color: @red;
+    &:hover {
+      color: @redDark;
+      text-decoration: none;
+    }
+}
+
+.header {
+  text-align: center;
+
+  // -----------
+  // LOGO STYLES
+
+  // a.logo {
+  //   // background: url('@{imagePath}logos/flirt-logo.png');
+  //   .at2x('logos/flirt-logo.png', 131px, 34px);  /* retina mixin */
+  //   background-repeat: no-repeat;
+  //   height: 34px;
+  //   .block;
+  //   background-position-x: 50%;
+  // }
+
+  #csslogo {
+    display: inline-block;
+    .flirt {
+      font-size: 42px;
+      color: @black;
+      position: relative;
+      top: -31px;
+      left: 21px;
+      font-weight: normal;
+    }
+
+    &:hover {
+      text-decoration: none;
+      .heart span {
+        .transition(0.1s);
+        background: @redDark;
+      }
+    }
+  }
+
+  .heart {
+    height: 34px;
+    width: 131px;
+    position: relative;
+    @width: 8px;
+
+    span {
+      .transition(0.1s);
+      background: @red;
+      display: block;
+      position: absolute;
+      width: @width;
+    }
+    .section1 {
+      height: 15px;
+    }
+    .section2 {
+      left: @width;
+      top: -7px;
+      height: 7px;
+    }
+    .section3 {
+      left: @width*2; 
+      height: @width;
+    }
+    .section4 {
+      left: @width*3;
+      top: -7px;
+      height: 7px;
+    }
+    .section5 {
+      left: @width*4;
+      height: 15px;
+    }
+    .section6 {
+      left: @width*3;
+      top: 15px;
+      height: 7px;
+    }
+    .section7 { /* bottom piece */
+      left: @width*2;
+      top: 23px;
+      height: @width;
+    }
+    .section8 {
+      left: @width;
+      top: 15px;
+      height: 7px;
+    }
+  }
+}
+
+// --------------
+
+/* Footer */
+.footer {
+  padding-top: 60px;
+
+  p {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 200;
+    text-align: center;
+    a {
+        color: #aaa;
+    }
+  }
+}
