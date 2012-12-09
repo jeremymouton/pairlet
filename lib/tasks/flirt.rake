@@ -46,11 +46,11 @@ namespace :flirt do
         puts @matching_user.email + " (ID: #{@match.user_id.to_s}) flirted by #{@flirting_user.email}"
         puts '------'
 
-        # Create the relationship
-        @flirting_user.follow!(@matching_user)
-
         # Flag the flirt as matched with an existing user
         flirt.update_attribute(:matched, true)
+
+        # Create the relationship
+        @flirting_user.follow!(@matching_user)
       end
     end
 

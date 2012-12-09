@@ -15,9 +15,11 @@
   </tr>
 <% end %>
 </table>
-
 <br />
 
-<%= link_to 'New Link', new_link_path %> <br />
-<%= link_to "Authenticate with Twitter", "/auth/twitter" %> <br />
-<%= link_to "Authenticate with Facebook", "/auth/facebook" %>
+<% unless @providers.include? 'twitter'  %>
+  <%= link_to "Add your Twitter account", "/auth/twitter" %> <br />
+<% end %>
+<% unless @providers.include? 'facebook' %>
+  <%= link_to "Add your Facebook account", "/auth/facebook" %>
+<% end %>

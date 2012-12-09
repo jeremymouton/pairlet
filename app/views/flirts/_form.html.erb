@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :provider %><br />
-    <%= f.text_field :provider %>
+    <%= f.select(:provider, options_for_select([['Select one', ''], ['Twitter', 'twitter'], ['Facebook', 'facebook']], 1)) %>
   </div>
 
   <div class="field">
