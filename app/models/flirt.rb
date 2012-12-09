@@ -6,6 +6,7 @@ class Flirt < ActiveRecord::Base
   # Validations
   PROVIDERS = %w(twitter facebook phone email)
   validates :provider, :inclusion => {:in => PROVIDERS}
+  validates_uniqueness_of(:handle, :scope => [ :provider, :user_id ])
 
   def default_values
     self.matched ||= 'false'

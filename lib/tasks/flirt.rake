@@ -50,6 +50,10 @@ namespace :flirt do
         flirt.update_attribute(:matched, true)
 
         # Create the relationship
+        # [TODO]: 
+        # This will trip if 2 handles are processed for the flirter->flirted association
+        # since it will already exists. 
+        # The above ":matched" flag should also prevent the error from tripping the script
         @flirting_user.follow!(@matching_user)
       end
     end

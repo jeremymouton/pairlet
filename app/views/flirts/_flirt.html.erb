@@ -1,1 +1,6 @@
-<%= flirt.handle %><br/>
+<tr>
+	<td><%= flirt.handle %></td>
+	<td><%= flirt.provider %></td>
+	<td><%= time_ago_in_words(flirt.created_at) %> ago</td>
+	<td><%= link_to 'Destroy', flirt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

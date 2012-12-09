@@ -5,9 +5,6 @@ class FlirtsController < ApplicationController
 
   def index
     @flirts = current_user.flirts
-  end
-
-  def new
     @flirt = Flirt.new
   end
 
@@ -18,7 +15,7 @@ class FlirtsController < ApplicationController
       @flirt.save
       redirect_to flirts_path, notice: 'Flirt was successfully created.'
     else
-      render action: "new"
+      redirect_to flirts_path, alert: 'Could not add Flirt.'
     end
   end
 

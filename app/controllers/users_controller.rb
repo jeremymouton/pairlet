@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @title = "Mutual flirts"
     @users = Array.new
     current_user.flirted_users.each do |flirted|
-      if current_user.mutual_flirts?(flirted) == true
+      if current_user.mutual_flirts?(flirted)
         @users << flirted
       end
     end
