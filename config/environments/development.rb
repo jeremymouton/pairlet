@@ -1,7 +1,5 @@
 FlirtRails::Application.configure do
 
-  KEYS = YAML.load_file("#{::Rails.root}/config/third_party_keys.yml")[::Rails.env]
-  
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -30,8 +28,8 @@ FlirtRails::Application.configure do
     domain: "gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: KEYS['gmail_username'],
-    password: KEYS['gmail_password']
+    user_name: ENV['GMAIL_USERNAME'],
+    password: ENV['GMAIL_PASSWORD']
   }
 
   # Specify what domain to use for mailer URLs
