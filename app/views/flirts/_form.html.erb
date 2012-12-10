@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-    <%= f.label 'Add a new Flirt' %><br />
+    <%= f.label 'New flirt' %><br />
     <%= f.select(:provider, options_for_select([['Select network', ''], ['Twitter', 'twitter'], ['Facebook', 'facebook']], 1)) %>
     <%= f.text_field :handle, :placeholder => 'Handle' %>
 
