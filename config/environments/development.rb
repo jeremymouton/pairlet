@@ -56,5 +56,5 @@ FlirtRails::Application.configure do
 
   # devise gem
   # http://railscasts.com/episodes/209-devise-revised
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' || 'http://flirt-app.herokuapp.com/' }
 end
