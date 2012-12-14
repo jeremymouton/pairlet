@@ -1,17 +1,8 @@
 <%= title "My accounts" %>
 
-<p>Add your social network handles here so other users can "flirt" your Facebook or Twitter handle.</p>
-<div class="well">
-	<h3>ie.</h3>
-	http://twitter.com/<strong>username</strong> <br />
-	http://facebook.com/<strong>custom.url</strong>
-</div>
+<p>Authorize your accounts so other users can find you.</p>
 
-<p>
-	Just click the links bellow to authorize this app to retreive your info. <br />
-	<small><em>The ONLY information stored is the "MyPersonalHandle", nothing else is done with your accounts.</em></small>
-</p>
-
+<% if @links.any? %>
 <table class="table">
   <tr>
     <th>Network</th>
@@ -24,10 +15,10 @@
 <% end %>
 </table>
 <br />
-
+<% end %>
 <% unless @providers.include? 'twitter'  %>
-  <%= link_to "Add your Twitter account", "/auth/twitter" %> <br />
+  <%= link_to "Authorize your Twitter account", user_omniauth_authorize_path(:twitter) %> <br />
 <% end %>
 <% unless @providers.include? 'facebook' %>
-  <%= link_to "Add your Facebook account", "/auth/facebook" %>
+  <%= link_to "Authorize your Facebook account", user_omniauth_authorize_path(:facebook) %>
 <% end %>

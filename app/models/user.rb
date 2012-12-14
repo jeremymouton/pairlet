@@ -1,19 +1,56 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
+
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+
+
+  
+  # INCLUDE DEFAULT DEVISE MODULES. 
+  # Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  
+  # OMNIAUTH AUTHENTICATION
+  #
+  #
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.handle = auth.info.nickname
+    end
+  end
+
+  def self.new_with_session(params, session)
+    if session["devise.user_attributes"]
+      new(session["devise.user_attributes"], without_protection: true) do |user|
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
+    end
+  end
+
+  def password_required?
+    super && provider.blank?
+  end
+
+  def update_with_password(params, *options)
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
 
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
-
-
-
-  # Relationships
+  
+  # RELATIONSHIPS
+  #
+  #
   has_many :links, dependent: :destroy, :order => 'created_at DESC'
   has_many :flirts, dependent: :destroy, :order => 'created_at DESC'
 
@@ -25,18 +62,20 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
 
 
-
-
-  # Confirmation email after user signup
-  after_create :send_welcome_email
+                                      
+  # CONFIRMATION EMAIL AFTER USER SIGNUP
+  #
+  #
+  # after_create :send_welcome_email
   def send_welcome_email
      UserMailer.signup_confirmation(self).deliver
   end
 
 
-
   
-  # User relationships
+  # USER RELATIONSHIPS
+  #
+  #
   def following?(other_user)
     relationships.find_by_flirted_id(other_user.id)
   end

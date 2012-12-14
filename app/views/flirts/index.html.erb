@@ -1,16 +1,12 @@
 <h1>Flirts</h1>
 
-<p>This is where you add "flirts".<br />
-	Choose the network and add the "handle":</p>
-<div class="well">
-	<h3>ie.</h3>
-	http://twitter.com/<strong>username</strong><br />
-	http://facebook.com/<strong>custom.url</strong>
-</div>
-<p>The person you add will <u>NOT</u> be notified.<br />
-When they also add you as a "flirt" you will both be notified under <%= link_to '"Mutual connections"', connections_path %>.</p>
+<p>This is where you add "flirts".</p>
+<p>The person you add will not be notified.<br />
+You will both be notified under <%= link_to '"Mutual connections"', connections_path %> when they flirt you back.</p>
 
 <%= render :partial => 'form' %>
+
+<% if @flirts.any? %>
 
 <h3>Currently flirting:</h3>
 <table class="table">
@@ -25,5 +21,7 @@ When they also add you as a "flirt" you will both be notified under <%= link_to 
   <%= render 'flirt', :flirt => flirt %>
 <% end %>
 </table>
+
+<% end %>
 
 <br />

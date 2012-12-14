@@ -10,8 +10,8 @@ class Link < ActiveRecord::Base
 
   def self.create_from_omniauth(auth)
     create! do |link|
-      link.provider = auth["provider"]
-      link.handle = auth["info"]["nickname"]
+      link.provider = auth["provider"]         # auth.provider
+      link.handle = auth["info"]["nickname"]   # auth.info.nickname
     end
   end
 
