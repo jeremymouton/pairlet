@@ -1,12 +1,9 @@
 <%= title @title %>
-<div class="row">
-  <div class="span8">
-    <% unless @users.empty? %>
-      <ul class="users">
-        <%= render @users %>
-      </ul>
-    <% else %>
-    	<h3>None yet, soon though... &nbsp;&nbsp; soon.</h3>
-    <% end %>
-  </div>
-</div>
+
+<% unless @users.empty? %>
+  <ul class="users">
+    <%= render @users %>
+  </ul>
+<% else %>
+	<h3>None yet, soon though... &nbsp;&nbsp; soon.</h3>
+<% end %>

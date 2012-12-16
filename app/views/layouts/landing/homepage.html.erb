@@ -18,14 +18,26 @@
 </head>
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
 
-  <div class="container-fluid header">
-    <%= render :partial => 'layouts/header' %>
-    <%= flash_messages %>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3 sidebar">
+        <div class="container">
+          <%= render :partial => 'layouts/sidebar' %>
+        </div>
+      </div>
+      <div class="span9">
+        <%= yield %>
+      </div>
+    </div>
   </div>
 
-  <%= yield %>
-
-  <%= render :partial => 'layouts/footer' %>
+  <div class="container-fluid footer">
+    <div class="row-fluid">
+      <div class="span12">
+        <%= render :partial => 'layouts/footer' %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

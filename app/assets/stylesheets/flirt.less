@@ -5,6 +5,8 @@
 
 body {
   padding-top: 30px;
+  background: @red url('layout/pixelated_bg.png');
+  color: @white;
 }
 
 a {
@@ -12,6 +14,10 @@ a {
   &:hover {
     color: @redDark;
     text-decoration: none;
+  }
+
+  &.link-cancel {
+    color: @white;
   }
 }
 
@@ -29,6 +35,12 @@ h3 {
   font-size: 21px;
 }
 
+.table {
+  th, td {
+    border: none;
+  }
+}
+
 .btn,
 table,
 select,
@@ -38,122 +50,144 @@ input[type=password] {
   font-size: 13px;
 }
 
-.header {
-  text-align: center;
-  // -----------
-  // LOGO STYLES
+.sidebar {
+  background: rgba(255, 255, 255, 0.14);
+  height: 100%;
+  padding: 30px 0 15px 0;
+  
+  li a {
+    color: @black;
+    text-shadow: none;
+    font-size: 13px;
+  }
+}
 
-  // a.logo {
-  //   // background: url('@{imagePath}logos/flirt-logo.png');
-  //   .at2x('logos/flirt-logo.png', 131px, 34px);  /* retina mixin */
-  //   background-repeat: no-repeat;
-  //   height: 34px;
-  //   .block;
-  //   background-position-x: 50%;
-  // }
+.content {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0 15px 15px 15px;
+}
 
-  #csslogo {
-    display: inline-block;
-    .flirt {
-      font-size: 42px;
-      color: @black;
-      position: relative;
-      top: -31px;
-      left: 21px;
-      font-weight: normal;
-    }
+// Flirt page
 
-    &:hover {
-      text-decoration: none;
-      .heart span {
-        .transition(0.1s);
-        background: @redDark;
+.table {
+  tr {
+    &:hover {  
+      i.icon-remove-circle {
+        opacity:1;
+      }
+      
+      .time-ago {
+        opacity:1;
       }
     }
-    &:after {
-        content: 'α alpha';
-        color: #ccc;
-        font-size: 11px;
-        top: -29px;
-        left: 7px;
-        position: relative;
+
+    td {
+      
+      i.provider {
+        width: 30px;
+      }
+      i.icon-facebook {
+        padding-left: 4px;
+      }
+      i.icon-remove-circle {
+        opacity:0;
+        width: 40px;
+        color: @white;
+      }
     }
   }
 
-  .heart {
-    height: 34px;
-    width: 131px;
-    position: relative;
-    @width: 8px;
+  .time-ago {
+    width: 150px;
+    font-size: 11px;
+    opacity:0;
+  }
+}
 
-    span {
+#csslogo {
+  margin-left: 15px;
+  display: inline-block;
+  .flirt {
+    font-size: 24px;
+    color: @black;
+    position: relative;
+    top: -26px;
+    left: 37px;
+    font-weight: normal;
+    
+    &:after {
+      content: 'α';
+      color: #ddd;
+      font-weight: 200;
+      font-size: 11px;
+      top: -15px;
+      left: 0px;
+      position: relative;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+    .heart span {
       .transition(0.1s);
-      background: @red;
-      display: block;
-      position: absolute;
-      width: @width;
+      background: @redDark;
     }
-    .section1 {
-      height: 15px;
-    }
-    .section2 {
-      left: @width;
-      top: -7px;
-      height: 7px;
-    }
-    .section3 {
-      left: @width*2; 
-      height: @width;
-    }
-    .section4 {
-      left: @width*3;
-      top: -7px;
-      height: 7px;
-    }
-    .section5 {
-      left: @width*4;
-      height: 15px;
-    }
-    .section6 {
-      left: @width*3;
-      top: 15px;
-      height: 7px;
-    }
-    .section7 { /* bottom piece */
-      left: @width*2;
-      top: 23px;
-      height: @width;
-    }
-    .section8 {
-      left: @width;
-      top: 15px;
-      height: 7px;
-    }
+  }
+}
+
+.heart {
+  height: 24px;
+  width: 25px;
+  position: relative;
+  @width: 6px;
+  @height: 5px;
+
+  span {
+    .transition(0.1s);
+    background: @red;
+    display: block;
+    position: absolute;
+    width: @width;
+  }
+  .section1 {
+    height: @height*2;
+  }
+  .section2 {
+    left: @width;
+    top: -@height;
+    height: @height;
+  }
+  .section3 {
+    left: @width*2; 
+    height: @width;
+  }
+  .section4 {
+    left: @width*3;
+    top: -@height;
+    height: @height;
+  }
+  .section5 {
+    left: @width*4;
+    height: @height*2;
+  }
+  .section6 {
+    left: @width*3;
+    top: @height*2;
+    height: @height;
+  }
+  .section7 { /* bottom piece */
+    left: @width*2;
+    top: @height*3;
+    height: @width;
+  }
+  .section8 {
+    left: @width;
+    top: @height*2;
+    height: @height;
   }
 }
 
 // --------------
-
-/* Navigation */
-
-ul.topnav {
-  font-weight: 200;
-  margin: 0 0 15px 0;
-  padding: 0;
-  list-style: none;
-  li {
-    display: inline-block;
-    padding: 0 10px;
-    
-    a {
-      font-size: 13px;
-    }
-    
-    &:first-child {
-      padding-left: none;
-    }
-  }
-}
 
 /* Footer */
 .footer {
@@ -161,11 +195,11 @@ ul.topnav {
 
   p {
     font-size: 12px;
-    color: #aaa;
+    color: #eee;
     font-weight: 200;
     text-align: center;
     a {
-      color: #aaa;
+      color: #eee;
     }
   }
 }

@@ -1,6 +1,6 @@
 <tr>
-	<td><%= flirt.handle %></td>
-	<td><%= flirt.provider %></td>
-	<td><%= time_ago_in_words(flirt.created_at) %> ago</td>
-	<td><%= link_to 'Unflirt', flirt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><i class="icon-<%= flirt.provider %>"></i></td>
+	<td><%= link_to flirt.handle, "http://www.#{flirt.provider}.com/#{flirt.handle}" %></td>
+	<td><%= link_to raw('<i class="icon-remove-circle"></i>'), flirt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td class="time-ago"><%= time_ago_in_words(flirt.created_at) %> ago</td>
 </tr>

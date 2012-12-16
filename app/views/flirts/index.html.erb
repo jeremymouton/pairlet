@@ -6,21 +6,18 @@ You will both be notified under <%= link_to '"Mutual connections"', connections_
 
 <%= render :partial => 'form' %>
 
-<% if @flirts.any? %>
+<% if @flirts.any?%>
 
 <h3>Currently flirting:</h3>
 <table class="table">
-  <tr>
-    <th>Handle</th>
-    <th>Provider</th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @flirts.each do |flirt| %>
   <%= render 'flirt', :flirt => flirt %>
 <% end %>
 </table>
+
+<% else %>
+  
+  <p>No flirts yet. Add one.</p>
 
 <% end %>
 

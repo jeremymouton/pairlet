@@ -4,12 +4,6 @@
 
 <% if @links.any? %>
 <table class="table">
-  <tr>
-    <th>Network</th>
-    <th>Handle</th>
-    <th></th>
-  </tr>
-
 <% @links.each do |link| %>
   <%= render 'link', :link => link %>
 <% end %>

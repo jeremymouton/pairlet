@@ -16,16 +16,26 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller.controller_name %> <%= controller.action_name %>">
 
-	<div class="container-fluid header">
-    <%= render :partial => 'layouts/header' %>
-    <%= flash_messages %>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3 sidebar">
+        <%= render :partial => 'layouts/sidebar' %>
+      </div>
+      <div class="span9 content">
+        <%= yield %>
+      </div>
+    </div>
   </div>
 
-	<div class="container">
-		<%= yield %>
-	</div>
+  <div class="container-fluid footer">
+    <div class="row-fluid">
+      <div class="span12">
+        <%= render :partial => 'layouts/footer' %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

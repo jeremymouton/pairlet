@@ -1,5 +1,5 @@
 <tr>
-	<td><%= link.provider %></td>
+	<td><i class="icon-<%= link.provider %>"></i></td>
 	<td><%= link.handle %></td>
-	<td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><%= link_to raw('<i class="icon-remove-circle"></i>'), link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
