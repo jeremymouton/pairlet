@@ -1,13 +1,15 @@
 <div class="pixelate">
-  <h1>Ever wondered how a crush felt about you?</h1>
-  <p>Flirt can let you know when there is mutual interest.<br />
+  <h1>Wondering if the person you like also likes you back?</h1>
+  <p>Pairlet can let you know when there is mutual interest.<br />
     Connect your Twitter and Facebook accounts, then start adding your Flirts.</p>
 
-    <% if !user_signed_in? %>
+  <% if !user_signed_in? %>
+  <div class="signup">
     <h2>Try it, sign in with:</h2>
     <p>
       <%= link_to raw('<i class="icon-twitter"></i> with Twitter'), user_omniauth_authorize_path(:twitter), :class => 'btn btn-twitter' %>
       <%= link_to raw('<i class="icon-facebook"></i> with Facebook'), user_omniauth_authorize_path(:facebook), :class => 'btn btn-facebook' %>
     </p>
-    <% end %>
+  </div>
+  <% end %>
 </div>

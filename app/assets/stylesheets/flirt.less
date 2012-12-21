@@ -4,9 +4,11 @@
 // -------------
 
 body {
-  padding-top: 30px;
-  background: @red url('layout/pixelated_bg.png');
-  color: @white;
+  color: @black;
+  &.pages.index {
+    color: @white;
+    background: @red url('layout/pixelated_bg.png');
+  }
 }
 
 a {
@@ -17,7 +19,7 @@ a {
   }
 
   &.link-cancel {
-    color: @white;
+    color: @black;
   }
 }
 
@@ -50,20 +52,27 @@ input[type=password] {
   font-size: 13px;
 }
 
-.sidebar {
-  background: rgba(255, 255, 255, 0.14);
-  height: 100%;
-  padding: 30px 0 15px 0;
-  
+.navbar {
+  .navbar-inner {
+    background: rgba(255, 255, 255, 0.97);
+  }
+
   li a {
     color: @black;
     text-shadow: none;
     font-size: 13px;
+    font-weight: normal;
+  }
+
+  .nav-collapse .nav > li > a, 
+  .nav-collapse .dropdown-menu a {
+    font-weight: normal;
   }
 }
 
+
 .content {
-  background: rgba(255, 255, 255, 0.3);
+  // background: rgba(255, 255, 255, 0.1);
   padding: 0 15px 15px 15px;
 }
 
@@ -92,7 +101,7 @@ input[type=password] {
       i.icon-remove-circle {
         opacity:0;
         width: 40px;
-        color: @white;
+        color: @black;
       }
     }
   }
@@ -104,14 +113,23 @@ input[type=password] {
   }
 }
 
+.navbar-inner {
+  padding-top: 13px;
+  padding-bottom: 5px;
+}
+
 #csslogo {
-  margin-left: 15px;
+  padding: 3px 20px 0px;
+  .pull-left;
+  width: 108px;
+  margin-left: 5px;
   display: inline-block;
+
   .flirt {
     font-size: 24px;
     color: @black;
     position: relative;
-    top: -26px;
+    top: 3px;
     left: 37px;
     font-weight: normal;
     
@@ -121,8 +139,8 @@ input[type=password] {
       font-weight: 200;
       font-size: 11px;
       top: -15px;
-      left: 0px;
-      position: relative;
+      right: 33px;
+      position: absolute;
     }
   }
 
@@ -136,7 +154,7 @@ input[type=password] {
 }
 
 .heart {
-  height: 24px;
+  top: 3px;
   width: 25px;
   position: relative;
   @width: 6px;
@@ -151,39 +169,31 @@ input[type=password] {
   }
   .section1 {
     height: @height*2;
+    width: @width*5;
   }
+
   .section2 {
     left: @width;
     top: -@height;
     height: @height;
   }
+
   .section3 {
-    left: @width*2; 
-    height: @width;
-  }
-  .section4 {
     left: @width*3;
     top: -@height;
     height: @height;
   }
-  .section5 {
-    left: @width*4;
-    height: @height*2;
-  }
-  .section6 {
-    left: @width*3;
-    top: @height*2;
-    height: @height;
-  }
-  .section7 { /* bottom piece */
+ 
+  .section4 { /* bottom piece */
     left: @width*2;
     top: @height*3;
     height: @width;
   }
-  .section8 {
+  .section5 {
     left: @width;
     top: @height*2;
     height: @height;
+    width: @width*3;
   }
 }
 

@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+window.addEventListener('load', function() {
+    new FastClick(document.body);
+}, false);
