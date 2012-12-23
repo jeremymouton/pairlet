@@ -67,9 +67,9 @@ class User < ActiveRecord::Base
   #
   #
   # after_create :send_welcome_email
-  def send_welcome_email
-     UserMailer.signup_confirmation(self).deliver
-  end
+  # def send_welcome_email
+  #    UserMailer.signup_confirmation(self).deliver
+  # end
 
 
   
