@@ -1,16 +1,15 @@
 
-<div class="span6 offset4">
+<div class="span3 offset4">
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-    <div class="span3">
+    <div>
       <h2>Finish signing up...</h2>
       <%= f.email_field :email, :placeholder => 'Email address' %>
 
       <p><small> <em>We need an email address so we can notify you of mutual connections.</em> </small></p>
     </div>
 
-    <div class="span3">
-      
+    <div>
       <p><%= f.submit "Sign up", :class => 'btn btn-red' %></p>
       
       <% if resource.errors.empty? %>

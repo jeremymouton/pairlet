@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
 
-  # layout 'landing/homepage'
-
   def index
-    # flash[:success] = 'Welcome'
   end
 
   def about
@@ -11,4 +8,5 @@ class PagesController < ApplicationController
 
   def terms
   end
+  
 end

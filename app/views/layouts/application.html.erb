@@ -21,15 +21,18 @@
 
   <%= render :partial => 'layouts/header' %>
   
-  <div class="row-fluid">
-    <div class="span12 content">
-      <%= yield %>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span12 content">
+        <%= flash_messages %>
+        <%= yield %>
+      </div>
     </div>
-  </div>
 
-  <div class="row-fluid">
-    <div class="span12 footer">
-      <%= render :partial => 'layouts/footer' %>
+    <div class="row-fluid">
+      <div class="span12 footer">
+        <%= render :partial => 'layouts/footer' %>
+      </div>
     </div>
   </div>
 

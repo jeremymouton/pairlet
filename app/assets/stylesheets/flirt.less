@@ -5,9 +5,12 @@
 
 body {
   color: @black;
+  
   &.pages.index {
     color: @white;
     background: @red url('layout/pixelated_bg.png');
+    background-position: top left;
+    background-attachment: fixed;
   }
 }
 
@@ -52,9 +55,17 @@ input[type=password] {
   font-size: 13px;
 }
 
+span.small {
+  font-size: 80%;
+}
+
+// Navigation
+
 .navbar {
   .navbar-inner {
     background: rgba(255, 255, 255, 0.97);
+    padding-top: 13px;
+    padding-bottom: 5px;
   }
 
   li a {
@@ -68,54 +79,150 @@ input[type=password] {
   .nav-collapse .dropdown-menu a {
     font-weight: normal;
   }
+
+  .btn-navbar,
+  .btn-navbar:hover,
+  .btn-navbar:active {
+    background: #eee;
+    box-shadow: none;
+    .icon-bar {
+      background: #ccc;
+      box-shadow: none;
+    }
+  }
 }
 
-
-.content {
-  // background: rgba(255, 255, 255, 0.1);
-  padding: 0 15px 15px 15px;
+.center {
+  text-align: center;
 }
 
+// --------------
+// Links page
+
+.container.accounts {
+  text-align: center;
+}
+
+// --------------
 // Flirt page
 
-.table {
+.table {  // currently flirting table 
   tr {
-    &:hover {  
-      i.icon-remove-circle {
-        opacity:1;
-      }
-      
-      .time-ago {
-        opacity:1;
-      }
-    }
-
     td {
+
+      a {
+        color: @black;
+      }
       
       i.provider {
         width: 30px;
       }
+
+      i.icon-twitter {
+        color: @tw;
+      }
+
       i.icon-facebook {
         padding-left: 4px;
+        color: @fb;
       }
+
       i.icon-remove-circle {
-        opacity:0;
-        width: 40px;
-        color: @black;
+        color: #bbb;
       }
     }
   }
 
   .time-ago {
-    width: 150px;
     font-size: 11px;
-    opacity:0;
+    color: #bbb;
+    font-style: italic;
   }
 }
 
-.navbar-inner {
-  padding-top: 13px;
-  padding-bottom: 5px;
+.add-flirt {
+  span.small {
+    font-style: italic;
+    margin-top: 20px;
+    float:left;
+  }
+}
+
+body.flirts {
+  .box-twitter,
+  .box-facebook {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.box-twitter,
+.box-facebook {
+  // text-align: center;
+  height: 125px;
+  width: 49%;
+  .pull-left;
+  border: 1px #eee solid;
+  position: relative;
+  text-align: center;
+
+  > i {
+    position: relative;
+    top: 36%;
+    font-size: 50px;
+    color: #ccc;
+  }
+
+  span {
+    // position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 75%;
+    line-height: 1.2em;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    color: @white;
+    a {
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+  .icon-remove-circle {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+  }
+}
+
+.box-twitter {
+  &:hover {
+    i {
+      color: @tw;
+    }
+  }
+
+  &.true {
+    background: @tw;
+    i {
+      color: @white;
+    }
+  }
+}
+.box-facebook {
+  &:hover {
+    i {
+      color: @fb;
+    }
+  }
+  &.true {
+    background: @fb;
+    i {
+      color: @white;
+    }
+  }
 }
 
 #csslogo {
@@ -167,6 +274,7 @@ input[type=password] {
     position: absolute;
     width: @width;
   }
+
   .section1 {
     height: @height*2;
     width: @width*5;
@@ -189,6 +297,7 @@ input[type=password] {
     top: @height*3;
     height: @width;
   }
+
   .section5 {
     left: @width;
     top: @height*2;
@@ -204,14 +313,18 @@ input[type=password] {
   padding-top: 60px;
 
   p {
-    font-size: 12px;
-    color: #eee;
+    color: #999;
+    font-size: 11px;
     font-weight: 200;
     text-align: center;
     a {
-      color: #eee;
+      color: #999;
     }
   }
+}
+
+body.landing {
+  
 }
 
 /* Signin */

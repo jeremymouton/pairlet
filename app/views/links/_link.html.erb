@@ -1,5 +1,8 @@
-<tr>
-	<td><i class="icon-<%= link.provider %>"></i></td>
-	<td><%= link.handle %></td>
-	<td><%= link_to raw('<i class="icon-remove-circle"></i>'), link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
+<div class="box-<%= link.provider %> <%= @providers.include? link.provider %>">
+	<i class="icon-<%= link.provider %>"></i>
+	<% if @providers.include? "#{link.provider}"  %>
+	  <span><%= link.handle %></span>
+	<% end %>
+
+	<%= link_to raw('<i class="icon-remove-circle"></i>'), link, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

@@ -24,4 +24,5 @@ class FlirtsController < ApplicationController
     @flirt.destroy
     redirect_to flirts_path, notice: 'Successfully deleted.'
   end
+  
 end

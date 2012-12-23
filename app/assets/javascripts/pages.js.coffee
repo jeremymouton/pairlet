@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-	$(".pixelate h1").fitText(1, { minFontSize: '22px', maxFontSize: '80px' })
+	$(".pixelate h1").fitText(1, { minFontSize: '26px', maxFontSize: '62px' })
 	$(".pixelate p").fitText(1, { minFontSize: '16px', maxFontSize: '22px' })

@@ -1,15 +1,38 @@
-<div class="pixelate">
-  <h1>Wondering if the person you like also likes you back?</h1>
-  <p>Pairlet can let you know when there is mutual interest.<br />
-    Connect your Twitter and Facebook accounts, then start adding your Flirts.</p>
+  <div class="pixelate">
+    <h1>Wondering if the person you like also likes you back?</h1>
+    <p>Pairlet can let you know when there is mutual interest.<br />
+      Connect your Twitter and Facebook accounts, then start adding your Flirts.</p>
 
-  <% if !user_signed_in? %>
-  <div class="signup">
-    <h2>Try it, sign in with:</h2>
-    <p>
-      <%= link_to raw('<i class="icon-twitter"></i> with Twitter'), user_omniauth_authorize_path(:twitter), :class => 'btn btn-twitter' %>
-      <%= link_to raw('<i class="icon-facebook"></i> with Facebook'), user_omniauth_authorize_path(:facebook), :class => 'btn btn-facebook' %>
-    </p>
+    <% if !user_signed_in? %>
+    <div class="signup">
+      <h2>Try it, sign in with:</h2>
+      <p>
+        <%= link_to raw('<i class="icon-twitter"></i> with Twitter'), user_omniauth_authorize_path(:twitter), :class => 'btn btn-twitter' %>
+        <%= link_to raw('<i class="icon-facebook"></i> with Facebook'), user_omniauth_authorize_path(:facebook), :class => 'btn btn-facebook' %>
+      </p>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
+
+  <div class="container">
+    <div class="span4">
+      <h3>How it works:</h3>
+      <p>
+        Connect your Twitter and Facebook accounts so other people can "flirt" you by your usernames.
+      </p>
+      <p>
+        <small><em>Pairlet only stores your Facebook and Twitter usernames, as well as your email address for notifications. <u>Nothing</u> else. <br />
+        You can delete (destroy) your account at any time.</em></small>
+      </p>
+    </div>
+    <div class="span4">
+      <p style="padding-top:30px;">
+        Start adding your flirts using their Facebook or Twitter usernames.<br />
+        Your flirts won't know you flirted them, until...
+      </p>
+    </div>
+    <div class="span4">
+      <p style="padding-top:30px;">... Until they flirt you back! That way you both know you're both interested, and no awkward feelings.</p>
+      <p>Happy flirting.</p>
+    </div>
+  </div>

@@ -1,18 +1,28 @@
-<%= title "My accounts" %>
+<div class="container accounts span6 offset3">
+  <%= title "My accounts" %>
 
-<p>Authorize your accounts so other users can find you.</p>
+  <p>Authorize your accounts so other users can find you.</p>
 
-<% if @links.any? %>
-<table class="table">
-<% @links.each do |link| %>
-  <%= render 'link', :link => link %>
-<% end %>
-</table>
-<br />
-<% end %>
-<% unless @providers.include? 'twitter'  %>
-  <%= link_to "Authorize your Twitter account", user_omniauth_authorize_path(:twitter) %> <br />
-<% end %>
-<% unless @providers.include? 'facebook' %>
-  <%= link_to "Authorize your Facebook account", user_omniauth_authorize_path(:facebook) %>
-<% end %>
+  <% if @links.any? %>
+
+    <% @links.each do |link| %>
+      <%= render 'link', :link => link %>
+    <% end %>
+
+  <% end %>
+
+  <% unless @providers.include? 'twitter'  %>
+    <div class="box-twitter">
+      <i class="icon-twitter"></i>
+      <span><%= link_to "Authorize", user_omniauth_authorize_path(:twitter) %></span>
+    </div>
+  <% end %>
+  <% unless @providers.include? 'facebook' %>
+    <div class="box-facebook">
+      <i class="icon-facebook"></i>
+      <span><%= link_to "Authorize", user_omniauth_authorize_path(:facebook) %></span>
+    </div>
+  <% end %>
+
+
+</div>

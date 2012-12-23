@@ -17,4 +17,5 @@ class LinksController < ApplicationController
     @link.destroy
     redirect_to links_path, notice: 'Account was successfully removed.'
   end
+  
 end
