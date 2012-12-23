@@ -2,6 +2,8 @@
 
 ----
 
+	- version Cron job setup in Git instead of directly on the server. 
+
 ### SIGNUP
 
 	- Redirect new registered user to Accounts page.

@@ -5,4 +5,11 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail to: user.email, subject: "Signup Confirmation"
   end
+
+  def connection_email(user, newflirt)
+    @user = user
+    @newflirt = newflirt
+    mail to: user.email, subject: "Someone flirted you back on Pairlet!"
+  end
+
 end

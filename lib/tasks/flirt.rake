@@ -50,11 +50,18 @@ namespace :flirt do
         flirt.update_attribute(:matched, true)
 
         # Create the relationship
-        # [TODO]: 
-        # This will trip if 2 handles are processed for the flirter->flirted association
-        # since it will already exists. 
-        # The above ":matched" flag should also prevent the error from tripping the script
         @flirting_user.follow!(@matching_user)
+
+        # Check for a mutual connection
+        @connections = Array.new
+        if @flirting_user.mutual_flirts?(@matching_user)
+          @connections << @matching_user
+          puts "Found mutual connections too!"
+          puts "#{@flirting_user.handle} and #{@matching_user.handle} are flirting."
+          UserMailer.connection_email(@flirting_user, @matching_user).deliver
+          UserMailer.connection_email(@matching_user, @flirting_user).deliver
+        end
+
       end
     end
 

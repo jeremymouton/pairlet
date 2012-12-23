@@ -19,10 +19,13 @@
 		</a>
 	
 		<div class="nav-collapse collapse">
-			<ul class="nav">
+			<ul class="nav pull-left">
 				<li><%= link_to 'Flirts', flirts_path %></li>
 				<li><%= link_to 'Mutual flirts', connections_path %></li>
 				<li><%= link_to 'My accounts', user_accounts_path %></li>
+			</ul>
+
+			<ul class="nav pull-right">
 				<li><%= link_to 'Edit settings', edit_user_registration_path %></li>
 				<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
 			</ul>
