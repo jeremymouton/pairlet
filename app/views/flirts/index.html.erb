@@ -34,10 +34,9 @@
   </div> <!-- .add-flirt -->
 
   <div class="span6">
+    <h2>Currently flirting:</h2>
 
     <% if @flirts.any?%>
-
-      <h2>Currently flirting:</h2>
       <table class="table">
       <% @flirts.each do |flirt| %>
         <%= render 'flirt', :flirt => flirt %>
@@ -45,7 +44,7 @@
       </table>
 
     <% else %> 
-      <h2>No flirts yet. Add one.</h2>
+      <h4>No flirts yet.</h4>
     <% end %>
   </div>
 </div>

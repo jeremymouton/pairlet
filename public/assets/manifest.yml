@@ -5,6 +5,14 @@ layout/pixelated_bg.png: layout/pixelated_bg.png
 layout/pixelated_bg/index.png: layout/pixelated_bg.png
 pairlet.png: pairlet.png
 pairlet/index.png: pairlet.png
+touch/apple-touch-icon-precomposed.png: touch/apple-touch-icon-precomposed.png
+touch/apple-touch-icon-precomposed/index.png: touch/apple-touch-icon-precomposed.png
+touch/h/apple-touch-icon.png: touch/h/apple-touch-icon.png
+touch/h/apple-touch-icon/index.png: touch/h/apple-touch-icon.png
+touch/l/apple-touch-icon.png: touch/l/apple-touch-icon.png
+touch/l/apple-touch-icon/index.png: touch/l/apple-touch-icon.png
+touch/l/apple-touch-iconx72.png: touch/l/apple-touch-iconx72.png
+touch/l/apple-touch-iconx72/index.png: touch/l/apple-touch-iconx72.png
 application.js: application.js
 application/index.js: application.js
 application.css: application.css

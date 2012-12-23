@@ -9646,7 +9646,10 @@ body.pages.index .footer p a {
   color: #eee;
 }
 body.pages.index .how {
+  padding-top: 15px;
+  padding-bottom: 10px;
   font-size: 15px;
+  background: rgba(255, 255, 255, 0.18);
 }
 .pixelate {
   text-shadow: 0 1px 0 #5c0000;
@@ -9800,6 +9803,10 @@ body.flirts .box-facebook:hover {
   border: 1px #eee solid;
   position: relative;
   text-align: center;
+}
+.box-twitter:first-child,
+.box-facebook:first-child {
+  margin-right: 0;
 }
 .box-twitter > i,
 .box-facebook > i {
@@ -10014,6 +10021,9 @@ form#edit_user {
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  body.pages.index .how {
+    background: none;
+  }
   #csslogo {
     margin-left: 0;
     padding-left: 15px;
