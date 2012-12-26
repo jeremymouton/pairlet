@@ -1,5 +1,7 @@
 FlirtRails::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/pairletadmin', :as => 'rails_admin'
+
   devise_for :users, path_names: { sign_in: "signin", sign_out: "logout", sign_up: "signup",  },
                      controllers: { omniauth_callbacks: "omniauth_signups" }
 

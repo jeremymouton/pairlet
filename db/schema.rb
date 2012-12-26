@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214020133) do
+ActiveRecord::Schema.define(:version => 20121226175614) do
 
   create_table "flirts", :force => true do |t|
     t.string   "handle"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(:version => 20121214020133) do
   end
 
   add_index "links", ["user_id"], :name => "index_links_on_user_id"
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 8
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "relationships", :force => true do |t|
     t.integer  "flirter_id"
@@ -60,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20121214020133) do
     t.datetime "updated_at",                             :null => false
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "is_admin"
     t.string   "handle"
   end
 
