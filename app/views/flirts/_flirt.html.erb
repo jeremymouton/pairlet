@@ -1,6 +1,6 @@
-<tr>
-	<td><i class="icon-<%= flirt.provider %> icon-large"></i></td>
-	<td><%= link_to flirt.handle, "http://www.#{flirt.provider}.com/#{flirt.handle}" %></td>
-	<td><%= link_to raw('<i class="icon-remove-circle icon-large"></i>'), flirt, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete', rel: 'tooltip', placement: 'top' %></td>
-	<td class="time-ago"><%= time_ago_in_words(flirt.created_at) %> ago</td>
-</tr>
+<div class="current-flirt">
+	<i class="icon-<%= flirt.provider %>"></i>
+	<%= link_to truncate(flirt.handle, :length => 32), "http://www.#{flirt.provider}.com/#{flirt.handle}" %>
+	<span class="time-ago"><%= time_ago_in_words(flirt.created_at) %> ago</span>
+	<%= link_to raw('<i class="icon-remove"></i>'), flirt, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete', rel: 'tooltip', placement: 'top' %>
+</div>

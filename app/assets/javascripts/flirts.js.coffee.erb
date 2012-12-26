@@ -7,16 +7,15 @@ jQuery -> # begin ugliest javascript ever
   # [TODO]
   # - Refactor this monster
 
-  $add_form       = '.flirts .add-flirt #add-form'
-  $btn_fb         = '.flirts .box-facebook'
-  $btn_tw         = '.flirts .box-twitter'
-  $action_btn	  = '.flirts .box-facebook, .box-twitter'
-  $flirt_provider = '.flirts #flirt_provider'
-  $flirt_handle   = '.flirts #flirt_handle'
-  $info_tw		  = '.flirts .info-twitter'
-  $info_fb		  = '.flirts .info-facebook'
-  $note			  = '.flirts span.small'
-  $cancel         = '.flirts .btn-cancel'
+  $add_form       = '.add-flirt #add-form'
+  $btn_fb         = '.add-flirt .box-facebook'
+  $btn_tw         = '.add-flirt .box-twitter'
+  $action_btn	  = '.add-flirt .box-facebook, .add-flirt .box-twitter'
+  $flirt_provider = '.add-flirt #flirt_provider'
+  $flirt_handle   = '.add-flirt #flirt_handle'
+  $info_tw		  = '.add-flirt .info-twitter'
+  $info_fb		  = '.add-flirt .info-facebook'
+  $cancel         = '.add-flirt .btn-cancel'
  
   $($add_form).hide()
   $($info_tw).hide()
@@ -28,7 +27,7 @@ jQuery -> # begin ugliest javascript ever
   	$($add_form).hide()
   	$($info_tw).hide()
   	$($info_fb).hide()
-  	$($note).show()
+
 
   # Set Facebook flirt entry info
   $($btn_fb).click ->
@@ -37,7 +36,7 @@ jQuery -> # begin ugliest javascript ever
     $($flirt_provider).val('facebook').css('display','none')
     $(flirt_handle).attr('placeholder', 'Facebook Username')
     $($info_fb).show()
-    $($note).hide()
+
 
   # Set Twitter flirt entry info
   $($btn_tw).click ->
@@ -46,4 +45,4 @@ jQuery -> # begin ugliest javascript ever
     $($flirt_provider).val('twitter').css('display','none')
     $(flirt_handle).attr('placeholder', 'Twitter Username')
     $($info_tw).show()
-    $($note).hide()
+

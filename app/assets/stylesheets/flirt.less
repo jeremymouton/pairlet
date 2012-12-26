@@ -59,6 +59,17 @@ span.small {
   font-size: 80%;
 }
 
+.center { 
+  text-align: center;
+}
+
+p.info {
+  font-size: 85%;
+  width: 100%; 
+  color: #888;
+  font-style: italic;
+}
+
 // Navigation
 
 .navbar {
@@ -106,98 +117,23 @@ span.small {
 // --------------
 // Flirt page
 
-.table {  // currently flirting table 
-  tr {
-    td {
-
-      a {
-        color: @black;
-      }
-      
-      i.provider {
-        width: 30px;
-      }
-
-      i.icon-twitter {
-        color: @tw;
-      }
-
-      i.icon-facebook {
-        padding-left: 4px;
-        color: @fb;
-      }
-
-      i.icon-remove-circle {
-        color: #bbb;
-      }
-    }
-  }
-
-  .time-ago {
-    font-size: 11px;
-    color: #bbb;
-    font-style: italic;
-  }
-}
-
-.add-flirt {
-  span.small {
-    font-style: italic;
-    margin-top: 20px;
-    float:left;
-  }
-}
-
-body.flirts {
-  .box-twitter,
-  .box-facebook {
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
-
 .box-twitter,
 .box-facebook {
-  // text-align: center;
   height: 125px;
-  width: 49%;
   .pull-left;
-  border: 1px #eee solid;
   position: relative;
   text-align: center;
+  border: 1px solid #eee;
   
-  &:first-child {
-    margin-right: 0;
+  &:hover {
+    cursor: pointer;
   }
-
-  > i {
+  
+  i {
     position: relative;
     top: 36%;
     font-size: 50px;
     color: #ccc;
-  }
-
-  span {
-    // position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 75%;
-    line-height: 1.2em;
-    position: absolute;
-    display: block;
-    overflow: hidden;
-    color: @white;
-    a {
-      font-size: 12px;
-      color: #888;
-    }
-  }
-
-  .icon-remove-circle {
-    position: absolute;
-    right: 8px;
-    top: 5px;
   }
 }
 
@@ -207,27 +143,106 @@ body.flirts {
       color: @tw;
     }
   }
-
-  &.true {
-    background: @tw;
-    i {
-      color: @white;
-    }
-  }
 }
+
 .box-facebook {
   &:hover {
     i {
       color: @fb;
     }
   }
+}
+
+.currently-flirting {
+  overflow: hidden;
+  margin-top: 30px;
+  float: left;
+  width: 100%;
+  a {
+    color: @black;
+  }
+  
+  i.provider {
+    width: 30px;
+  }
+
+  i.icon-twitter {
+    color: @tw;
+  }
+
+  i.icon-facebook {
+    padding: 0 5px 0 6px;
+    color: @fb;
+  }
+
+  .time-ago {
+    font-size: 11px;
+    color: #bbb;
+    font-style: italic;
+  }
+}
+
+// Sidebar settings
+
+.current-flirt,
+.account-twitter,
+.account-facebook {
+  margin-bottom: 10px;
+  > i {
+    color: #ccc;
+    font-size: 22px;
+    position: relative;
+    top: 4px;
+  }
+
+  a,
+  span {
+    padding-left: 15px;
+    a {
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+  .icon-remove {
+    float: right;
+    position: relative;
+    top: 4px;
+  }
+}
+
+.icon-remove {
+  color: #ccc;
+  font-size: 13px;
+}
+
+.account-twitter {
   &.true {
-    background: @fb;
-    i {
-      color: @white;
+    > i {
+      color: @tw;
     }
   }
 }
+.account-facebook {
+  > i {
+    padding: 0 5px 0 6px;
+  }
+  &.true {
+    > i {
+      color: @fb;
+    }
+  }
+}
+
+// Accounts
+
+.my-accounts {
+  a {
+    padding-left: 0;
+  }
+}
+
+// Logo styles
 
 #csslogo {
   padding: 3px 20px 0px;
@@ -363,4 +378,14 @@ form#edit_user {
     border-color: rgba(198, 24, 39, 0.8);
     .box-shadow(0px 0px 3px rgba(198, 24, 39, 0.8));
   }
+}
+
+// form styles
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  .border-radius(0px);
+  box-shadow: none;
+  
 }

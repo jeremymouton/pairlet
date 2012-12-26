@@ -1,16 +1,4 @@
 <%= form_for(@flirt, :html => { :class => "form-inline"}) do |f| %>
-  <% if @flirt.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@flirt.errors.count, "error") %> prohibited this flirt from being saved:</h2>
-
-      <ul>
-      <% @flirt.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
     <%= f.select(:provider, options_for_select([['Select network', ''], ['Twitter', 'twitter'], ['Facebook', 'facebook']], 1)) %>
     <%= f.text_field :handle, :placeholder => 'Username' %>
 

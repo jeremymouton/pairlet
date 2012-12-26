@@ -1,8 +1,13 @@
 <div class="container span12">
   <div class="span6 add-flirt">
-    <h1>Add flirts</h1>
+    
+    <% if @providers.empty? %>
+      <h1>Thanks for signing up!</h1>
+      <p>The first step is to authorize your accounts:</p>
+      <p class="info">Pairlet will only store your username.</p>
+    <% else %>
+    <h1>Add a flirt</h1>
     <div class="row-fluid">
-  
       <div class="span6 box-twitter">
         <i class="icon-twitter"></i>
       </div>
@@ -16,35 +21,57 @@
 
       <div id="info">
         <div class="info-twitter">
-          <p>Twitter's usernames are <code>www.twitter.com/<b>username</b></code> or <code>@<b>username</b></code></p>
+          <p>www.twitter.com/<b>username</b> or @<b>username</b></p>
           <span class="btn btn-cancel">cancel</span>
         </div>
 
         <div class="info-facebook">
-          <p>Facebook's usernames are found in the URL: <code>www.facebook.com/<b>username</b></code></p>
+          <p>www.facebook.com/<b>username</b></p>
           <span class="btn btn-cancel">cancel</span>
         </div>
       </div> <!-- #info -->
 
-    </div> <!-- .row-fluid -->
+      <div class="currently-flirting">
+        <% if @flirts.any?%>
+          <h4>People you are flirting:</h4>
+          <% @flirts.each do |flirt| %>
+            <%= render 'flirt', :flirt => flirt %>
+          <% end %>
+        <% else %> 
+          <h4>No flirts yet.</h4>
+        <% end %>
+      </div>
 
-    <span class="small span12">The person you add will not be notified.<br />
-    You will both be notified by email when a mutual connection has been found.</span>
+    </div> <!-- .row-fluid -->
+    <% end %>
+   
     
   </div> <!-- .add-flirt -->
 
-  <div class="span6">
-    <h2>Currently flirting:</h2>
+  <div class="span6 my-accounts">
+    <%= title "My accounts" %>
 
-    <% if @flirts.any?%>
-      <table class="table">
-      <% @flirts.each do |flirt| %>
-        <%= render 'flirt', :flirt => flirt %>
+    <div class="row-fluid">
+      <% if @links.any? %>
+        <% @links.each do |link| %>
+          <%= render 'links/link', :link => link %>
+        <% end %>
       <% end %>
-      </table>
+    </div>
 
-    <% else %> 
-      <h4>No flirts yet.</h4>
+    <% unless @providers.include? 'twitter'  %>
+      <div class="account-twitter">
+        <i class="icon-twitter"></i>
+        <span><%= link_to "Authorize my Twitter account", user_omniauth_authorize_path(:twitter) %></span>
+      </div>
+    <% end %>
+    <% unless @providers.include? 'facebook' %>
+      <div class="account-facebook">
+        <i class="icon-facebook"></i>
+        <span><%= link_to "Authorize my Facebook account", user_omniauth_authorize_path(:facebook) %></span>
+      </div>
     <% end %>
   </div>
+
+    
 </div>

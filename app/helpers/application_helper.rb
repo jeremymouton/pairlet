@@ -7,7 +7,7 @@ module ApplicationHelper
   def flash_messages
     return if flash.empty?
 
-    content_tag(:div, :class => 'container') do
+    content_tag(:div, :class => 'notification') do
       flash.collect do |type, message|
         content_tag(:div, :class => "alert alert-#{type}") do
           raw(message) +

@@ -1,11 +1,11 @@
   <div class="pixelate">
-    <h1>Ever wondered if the person you like also likes you back?</h1>
+    <h1>Have you ever wondered how a crush felt about you?</h1>
     <p>Pairlet can let you know when there is mutual interest.<br />
-      Connect your Twitter and Facebook accounts, then start adding your Flirts.</p>
+      Connect your Twitter and Facebook accounts, then start adding your flirts.</p>
 
     <% if !user_signed_in? %>
     <div class="signup">
-      <h2>Try it, sign in with:</h2>
+      <h2>Try it, sign in:</h2>
       <p>
         <%= link_to raw('<i class="icon-twitter"></i> with Twitter'), user_omniauth_authorize_path(:twitter), :class => 'btn btn-twitter' %>
         <%= link_to raw('<i class="icon-facebook"></i> with Facebook'), user_omniauth_authorize_path(:facebook), :class => 'btn btn-facebook' %>
@@ -16,17 +16,12 @@
 
   <div class="container-fluid how">
     <div class="row-fluid">
-      <div class="span4">
+      <div class="span8 offset2">
         <h3>How it works:</h3>
         <p>
-          <h5>1. Sign up and connect your Twitter &amp; Facebook accounts.</h5>
-        </p>
-      </div>
-      <div class="span4">
-        <p style="padding-top:21px;"><h5>2. Add flirts using their Twitter or Facebook usernames.</h5></p>
-      </div>
-      <div class="span4">
-        <p style="padding-top:21px;"><h5>3. Let Pairlet handle the rest.</h5></p>
+          <p>1. Sign up and connect your Twitter &amp; Facebook accounts.</p>
+          <p>2. Add flirts using their Twitter or Facebook usernames.</p>
+          <p>3. Let Pairlet handle the rest.</p>
         
       </div>
     </div>
