@@ -9649,6 +9649,9 @@ body.pages.index .footer p,
 body.pages.index .footer p a {
   color: #eee;
 }
+body.pages.index .addthis_toolbox {
+  margin-top: 30px;
+}
 body.pages.index .how {
   padding: 15px 0 10px 0;
   font-size: 15px;
