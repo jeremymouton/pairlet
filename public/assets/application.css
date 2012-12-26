@@ -9381,8 +9381,8 @@ ul.icons li .icon-large:before {
   float: left;
   float: left;
   position: relative;
-  top: 10px;
-  left: 46px;
+  text-align: center;
+  width: 100%;
 }
 .alert-alert {
   color: #B94A48;
@@ -9641,6 +9641,9 @@ ul.dropdown-menu li a:hover {
 }
 body.pages.index .container-fluid {
   margin: 0 auto;
+}
+body.pages.index .alert {
+  color: #ffffff;
 }
 body.pages.index .footer p,
 body.pages.index .footer p a {
