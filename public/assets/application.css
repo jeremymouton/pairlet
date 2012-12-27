@@ -9843,6 +9843,13 @@ p.info {
   color: #bbb;
   font-style: italic;
 }
+.current-flirt.mutual {
+  background: url('heart.png') 3px 6px no-repeat;
+  padding-left: 20px;
+}
+.current-flirt.mutual > i {
+  text-indent: -9999px;
+}
 .current-flirt,
 .account-twitter,
 .account-facebook {

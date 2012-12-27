@@ -1,6 +1,8 @@
 ---
 favicon.ico: favicon.ico
 favicon/index.ico: favicon.ico
+heart.png: heart.png
+heart/index.png: heart.png
 layout/pixelated_bg.png: layout/pixelated_bg.png
 layout/pixelated_bg/index.png: layout/pixelated_bg.png
 pairlet.png: pairlet.png

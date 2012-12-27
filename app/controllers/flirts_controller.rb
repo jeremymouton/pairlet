@@ -12,6 +12,14 @@ class FlirtsController < ApplicationController
     @links.each do |link| 
       @providers << link.provider
     end 
+
+    @mutual = Array.new
+    current_user.flirted_users.each do |flirted|
+      if current_user.mutual_flirts?(flirted)
+        @mutual << flirted.handle
+      end
+    end
+
   end
 
   def create

@@ -1,6 +1,6 @@
-<div class="current-flirt">
-	<i class="icon-<%= flirt.provider %>"></i>
-	<%= link_to truncate(flirt.handle, :length => 35), "http://www.#{flirt.provider}.com/#{flirt.handle}" %>
-	
-	<%= link_to raw('<i class="icon-remove"></i>'), flirt, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete', rel: 'tooltip', placement: 'top' %>
+<div class="current-flirt <%= 'mutual' if @mutual.include?(flirt.handle) %>">
+  <i class="icon-<%= flirt.provider %>"></i>
+  <%= link_to truncate(flirt.handle, :length => 35), "http://www.#{flirt.provider}.com/#{flirt.handle}" %>
+  
+  <%= link_to raw('<i class="icon-remove"></i>'), flirt, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete', rel: 'tooltip', placement: 'top' %>
 </div>
