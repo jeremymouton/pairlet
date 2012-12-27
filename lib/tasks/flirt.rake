@@ -31,20 +31,17 @@ namespace :flirt do
     @matching_flirts = Array.new
 
     @flirts.each do |flirt|
-      puts flirt.handle
-      #####
+
       # try to match each flirt to a user handle
       @match = Link.where(handle: flirt.handle, provider: flirt.provider).first
+      
       unless @match.nil?
         # store it
         @matching_flirts << @match
-        #####
+
         # find the users
         @matching_user = User.where(id: @match.user_id).first
         @flirting_user = User.where(id: flirt.user_id).first
-
-        puts @matching_user.email + " (ID: #{@match.user_id.to_s}) flirted by #{@flirting_user.email}"
-        puts '------'
 
         # Flag the flirt as matched with an existing user
         flirt.update_attribute(:matched, true)
@@ -53,41 +50,15 @@ namespace :flirt do
         @flirting_user.follow!(@matching_user)
 
         # Check for a mutual connection
-        @connections = Array.new
         if @flirting_user.mutual_flirts?(@matching_user)
+          @connections = Array.new
           @connections << @matching_user
-          puts "Found mutual connections too!"
-          puts "#{@flirting_user.handle} and #{@matching_user.handle} are flirting."
+         
           UserMailer.connection_email(@flirting_user, @matching_user).deliver
           UserMailer.connection_email(@matching_user, @flirting_user).deliver
         end
 
       end
-    end
-
-    if @matching_flirts.empty?
-      puts "*** no matched flirts ***"
-    end
-
-    # Print the results
-    puts "-----------"
-    print "#{@flirts.count} flirts processed, with #{@matching_flirts.count} matches discovered."
-    
-    ## Print a heart for every matched handle
-    if @matching_flirts.count > 0
-      @matching_flirts.each do
-        print <<-EOF
-
-          ,d88b.d88b,
-          88888888888 
-          `Y8888888Y'
-            `Y888Y'
-              `Y'
-
-        EOF
-      end
-    else
-      puts ' :(' 
     end
   end
 

@@ -3,7 +3,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
 
   # Validations
-  PROVIDERS = %w(twitter facebook phone email)
+  PROVIDERS = %w(twitter facebook)
   validates :provider, :inclusion => {:in => PROVIDERS}
   validates_presence_of :provider, :handle
   validates_uniqueness_of(:handle, :scope => :provider)

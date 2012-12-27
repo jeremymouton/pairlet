@@ -4,7 +4,7 @@ class Flirt < ActiveRecord::Base
   attr_accessible :user_id, :provider, :handle
 
   # Validations
-  PROVIDERS = %w(twitter facebook phone email)
+  PROVIDERS = %w(twitter facebook)
   validates_presence_of :provider, :handle
   validates_format_of :handle, :with => /^[a-z\d_\d.]+$/
   validates :provider, :inclusion => {:in => PROVIDERS}

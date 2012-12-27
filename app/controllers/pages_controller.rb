@@ -5,11 +5,5 @@ class PagesController < ApplicationController
 	  redirect_to flirts_path
 	end 
   end
-
-  def about
-  end
-
-  def terms
-  end
   
 end

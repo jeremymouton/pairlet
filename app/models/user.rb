@@ -84,10 +84,6 @@ class User < ActiveRecord::Base
     relationships.create!(flirted_id: other_user.id)
   end
 
-  def unfollow!(other_user)
-    relationships.find_by_flirted_id(other_user.id).destroy
-  end
-
   def following_me?(other_user)
     other_user.relationships.where(:flirted_id => self.id).any?
   end
