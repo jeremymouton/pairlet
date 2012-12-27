@@ -7,16 +7,22 @@ class FlirtsController < ApplicationController
     @flirts = current_user.flirts
     @flirt = Flirt.new
 
+    # user accounts - twitter || facebook
     @links = current_user.links
-    @providers = Array.new
+    
+    # get the providers 
+    @providers = Array.new 
     @links.each do |link| 
       @providers << link.provider
     end 
 
+    # get the user's mutual flirts
     @mutual = Array.new
     current_user.flirted_users.each do |flirted|
       if current_user.mutual_flirts?(flirted)
-        @mutual << flirted.handle
+        flirted.links.each do |link|
+          @mutual << link.handle
+        end
       end
     end
 

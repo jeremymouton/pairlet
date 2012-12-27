@@ -9374,6 +9374,7 @@ ul.icons li .icon-large:before {
 .alert {
   background: none;
   border: none;
+  font-weight: bold;
   font-size: 13px;
   text-align: center;
   margin-bottom: 0;
@@ -9388,7 +9389,7 @@ ul.icons li .icon-large:before {
   color: #B94A48;
 }
 .alert-notice {
-  color: #468847;
+  color: #333;
 }
 .alert .close {
   position: relative;
@@ -9644,6 +9645,7 @@ body.pages.index .container-fluid {
 }
 body.pages.index .alert {
   color: #ffffff;
+  text-shadow: none;
 }
 body.pages.index .footer p,
 body.pages.index .footer p a {
@@ -9843,12 +9845,26 @@ p.info {
   color: #bbb;
   font-style: italic;
 }
-.current-flirt.mutual {
-  background: url('heart.png') 3px 6px no-repeat;
-  padding-left: 20px;
+.current-flirt {
+  background: url('heart-gray.png') 1px 4px no-repeat;
+  padding-left: 10px;
 }
-.current-flirt.mutual > i {
-  text-indent: -9999px;
+.current-flirt.mutual {
+  background-image: url('heart.png');
+}
+.current-flirt.mutual .icon-facebook {
+  padding: 0;
+}
+.current-flirt > i {
+  display: none;
+}
+.current-flirt span {
+  font-size: 12px;
+  color: #ccc;
+  opacity: 0;
+}
+.current-flirt:hover span {
+  opacity: 1;
 }
 .current-flirt,
 .account-twitter,

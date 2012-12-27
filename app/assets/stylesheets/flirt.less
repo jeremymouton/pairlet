@@ -184,11 +184,29 @@ p.info {
 
 // mutual
 
-.current-flirt.mutual {
-  background: url('heart.png') 3px 6px no-repeat;
-  padding-left: 20px;
+.current-flirt {
+  background: url('heart-gray.png') 1px 4px no-repeat;
+  padding-left: 10px;
+  &.mutual {
+    background-image: url('heart.png');
+    .icon-facebook {
+      padding: 0;
+    }
+  }
   > i {
-    text-indent: -9999px;
+    display:none;
+  }
+
+  span {
+    font-size: 12px;
+    color: #ccc;
+    opacity:0;
+  }
+
+  &:hover {
+    span {
+      opacity:1;
+    }
   }
 }
 
