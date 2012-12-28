@@ -16,8 +16,4 @@ FlirtRails::Application.routes.draw do
   match "connections" => "users#mutual_flirts", :as => 'connections'
 
   resources :relationships, only: [:create, :destroy]
-
-  get "pages/about", :as => 'about'
-  get "pages/terms", :as => 'terms'
-
 end

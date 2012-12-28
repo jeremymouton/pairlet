@@ -145,7 +145,7 @@ p.info {
   .pull-left;
   position: relative;
   text-align: center;
-  border: 1px solid #eee;
+  .border-radius(4px);
   
   &:hover {
     cursor: pointer;
@@ -155,24 +155,16 @@ p.info {
     position: relative;
     top: 36%;
     font-size: 50px;
-    color: #ccc;
+    color: @white;
   }
 }
 
 .box-twitter {
-  &:hover {
-    i {
-      color: @tw;
-    }
-  }
+  background: @tw;
 }
 
 .box-facebook {
-  &:hover {
-    i {
-      color: @fb;
-    }
-  }
+  background: @fb;
 }
 
 .currently-flirting {
