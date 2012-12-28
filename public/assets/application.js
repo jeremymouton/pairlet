@@ -12570,7 +12570,7 @@ if (typeof module !== 'undefined' && module.exports) {
     });
     $(".alert .close").hide();
     return setTimeout(function() {
-      return $('.alert').fadeOut("slow");
+      return $('.alert').parent().fadeOut("slow").hide();
     }, 2700);
   });
 

@@ -8,5 +8,5 @@ jQuery ->
 	$(".alert .close").hide()
 	
 	setTimeout ->
-		$('.alert').fadeOut("slow")
+		$('.alert').parent().fadeOut("slow").hide()
 	,2700
