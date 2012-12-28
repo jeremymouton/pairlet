@@ -6,53 +6,60 @@
 @media (min-width: 1200px) {}
 
 @media (min-width: 980px) {
-	body {
-		padding-top: 65px;
-	}
+  body {
+    padding-top: 65px;
+  }
 }
  
 /* Portrait tablet to landscape and desktop */
 @media (max-width: 979px) {
-	.navbar-fixed-top .navbar-inner, 
-	.navbar-fixed-bottom .navbar-inner {
-		padding-top: 13px;
-	}
+  .navbar-fixed-top .navbar-inner, 
+  .navbar-fixed-bottom .navbar-inner {
+    padding-top: 13px;
+  }
+
+  .nav-collapse {
+    .nav {
+      margin-top: 15px;
+    }
+  }
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-	.flirts .box-twitter,
-	.flirts .box-facebook {
-		width: 49%;
-		.pull-left;
-	}
+  .flirts .box-twitter,
+  .flirts .box-facebook {
+    width: 49%;
+    .pull-left;
+  }
 
-	.flirts .box-twitter {
-		margin-right: 5px;
-		i {
-	      color: @tw;
-	    }
-	}
+  .flirts .box-twitter {
+    margin-right: 5px;
+    i {
+        color: @tw;
+      }
+  }
 
-	.flirts .box-facebook {
-		i {
-	      color: @fb;
-	    }
-	}
+  .flirts .box-facebook {
+    i {
+        color: @fb;
+      }
+  }
 
-	.my-accounts {
-		margin-top: 20px;
-		border-top: 1px solid #ccc;
-	}
+  .my-accounts {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+  }
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	body.pages.index .how {
-		background: none;
-	}
-	#csslogo {
-		margin-left: 0;
-		padding-left: 15px;
-	}
+  body.pages.index .how {
+    background: none;
+  }
+
+  #csslogo {
+    margin-left: 0;
+    padding-left: 15px;
+  }
 }

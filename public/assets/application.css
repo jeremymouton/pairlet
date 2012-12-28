@@ -9640,6 +9640,12 @@ ul.dropdown-menu li a:hover {
 .cancel:hover {
   cursor: pointer;
 }
+body.pages.index h1,
+body.pages.index h2,
+body.pages.index h3,
+body.pages.index h4 {
+  font-weight: bold;
+}
 body.pages.index .container-fluid {
   margin: 0 auto;
 }
@@ -9660,16 +9666,16 @@ body.pages.index .how {
   text-align: center;
 }
 body.pages.index .how-explain p {
-  line-height: 1.2em;
-  font-size: 17px;
+  line-height: 1.3em;
+  font-size: 16px;
 }
-p.disclosure {
+body.pages.index .how-explain p.disclosure {
   opacity: 0.4;
   line-height: 1.1em;
   margin-top: 30px;
-  font-size: 12px;
+  font-size: 13px;
 }
-p.disclosure:hover {
+body.pages.index .how-explain p.disclosure:hover {
   opacity: 1;
   cursor: default;
 }
@@ -9738,6 +9744,17 @@ h3 {
   line-height: 21px;
   font-size: 21px;
 }
+h4 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+}
 .table th,
 .table td {
   border: none;
@@ -9761,6 +9778,18 @@ p.info {
   width: 100%;
   color: #888;
   font-style: italic;
+}
+.help {
+  border-left: 1px solid #eee;
+  padding-left: 10px;
+  color: #aaa;
+  font-size: 12px;
+  margin-top: -12px;
+  padding-top: 0;
+}
+.help b,
+.help strong {
+  color: #666;
 }
 .navbar .navbar-inner {
   background: rgba(255, 255, 255, 0.97);
@@ -9846,17 +9875,7 @@ p.info {
   font-style: italic;
 }
 .current-flirt {
-  background: url('heart-gray.png') 1px 4px no-repeat;
-  padding-left: 10px;
-}
-.current-flirt.mutual {
-  background-image: url('heart.png');
-}
-.current-flirt.mutual .icon-facebook {
-  padding: 0;
-}
-.current-flirt > i {
-  display: none;
+  padding-left: 2px;
 }
 .current-flirt span {
   font-size: 12px;
@@ -9875,9 +9894,14 @@ p.info {
 .account-twitter > i,
 .account-facebook > i {
   color: #ccc;
-  font-size: 22px;
+  font-size: 17px;
   position: relative;
-  top: 4px;
+  top: 2px;
+}
+.current-flirt > i.icon-heart,
+.account-twitter > i.icon-heart,
+.account-facebook > i.icon-heart {
+  color: #c92a2a;
 }
 .current-flirt a,
 .account-twitter a,
@@ -9885,7 +9909,7 @@ p.info {
 .current-flirt span,
 .account-twitter span,
 .account-facebook span {
-  padding-left: 15px;
+  padding-left: 8px;
 }
 .current-flirt a a,
 .account-twitter a a,
@@ -9906,6 +9930,10 @@ p.info {
 .icon-remove {
   color: #ccc;
   font-size: 13px;
+}
+.account-twitter,
+.account-facebook {
+  padding-left: 2px;
 }
 .account-twitter.true > i {
   color: #00a0d1;
@@ -10074,6 +10102,9 @@ input[type=password] {
   .navbar-fixed-top .navbar-inner,
   .navbar-fixed-bottom .navbar-inner {
     padding-top: 13px;
+  }
+  .nav-collapse .nav {
+    margin-top: 15px;
   }
 }
 /* Landscape phone to portrait tablet */

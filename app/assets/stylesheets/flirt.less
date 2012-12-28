@@ -40,6 +40,15 @@ h3 {
   font-size: 21px;
 }
 
+h4 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5 { 
+  font-weight: 200;
+}
+
 .table {
   th, td {
     border: none;
@@ -68,6 +77,19 @@ p.info {
   width: 100%; 
   color: #888;
   font-style: italic;
+}
+
+.help {
+  border-left: 1px solid #eee;
+  padding-left: 10px;
+  color: #aaa;
+  font-size: 12px;
+  margin-top: -12px;
+  padding-top: 0;
+  b, 
+  strong {
+    color: #666;  
+  }
 }
 
 // Navigation
@@ -185,18 +207,7 @@ p.info {
 // mutual
 
 .current-flirt {
-  background: url('heart-gray.png') 1px 4px no-repeat;
-  padding-left: 10px;
-  &.mutual {
-    background-image: url('heart.png');
-    .icon-facebook {
-      padding: 0;
-    }
-  }
-  > i {
-    display:none;
-  }
-
+  padding-left: 2px;
   span {
     font-size: 12px;
     color: #ccc;
@@ -216,16 +227,21 @@ p.info {
 .account-twitter,
 .account-facebook {
   margin-bottom: 10px;
+  
   > i {
     color: #ccc;
-    font-size: 22px;
+    font-size: 17px;
     position: relative;
-    top: 4px;
+    top: 2px;
+  
+    &.icon-heart {
+      color: @red;
+    }
   }
 
   a,
   span {
-    padding-left: 15px;
+    padding-left: 8px;
     a {
       font-size: 12px;
       color: #888;
@@ -243,7 +259,10 @@ p.info {
   color: #ccc;
   font-size: 13px;
 }
-
+.account-twitter,
+.account-facebook {
+  padding-left: 2px;
+}
 .account-twitter {
   &.true {
     > i {
