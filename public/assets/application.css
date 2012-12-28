@@ -9820,6 +9820,12 @@ p.info {
   font-size: 13px;
   font-weight: normal;
 }
+.navbar .nav.pull-right {
+  margin-right: 10px;
+}
+.navbar .nav > li > a {
+  padding: 7px 15px 10px;
+}
 .navbar .nav-collapse .nav > li > a,
 .navbar .nav-collapse .dropdown-menu a {
   font-weight: normal;
@@ -9983,18 +9989,8 @@ p.info {
   font-size: 24px;
   color: #232323;
   position: relative;
-  top: 3px;
   left: 37px;
   font-weight: normal;
-}
-#csslogo .flirt:after {
-  content: 'α';
-  color: #ddd;
-  font-weight: 200;
-  font-size: 11px;
-  top: -15px;
-  right: 33px;
-  position: absolute;
 }
 #csslogo:hover {
   text-decoration: none;
