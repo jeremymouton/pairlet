@@ -9939,8 +9939,9 @@ p.info {
   color: #00a0d1;
 }
 .account-facebook > i {
-  padding: 0 5px 0 6px;
+  padding: 0 3px 0 5px;
 }
+.account-facebook span > i,
 .account-facebook.true > i {
   color: #3b5998;
 }
