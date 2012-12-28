@@ -3,6 +3,10 @@ class Flirt < ActiveRecord::Base
   belongs_to :user
   attr_accessible :user_id, :provider, :handle
 
+  # TODO
+  # Need to implement destroy dependency.
+  # Currently, when flirt is destroyed, the relationship remains.
+
   # Validations
   PROVIDERS = %w(twitter facebook)
   validates_presence_of :provider, :handle

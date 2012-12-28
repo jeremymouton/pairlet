@@ -5,3 +5,8 @@
 jQuery ->
 	$(".pixelate h1").fitText(1, { minFontSize: '26px', maxFontSize: '62px' })
 	$(".pixelate p").fitText(1, { minFontSize: '16px', maxFontSize: '22px' })
+	$(".alert .close").hide()
+	
+	setTimeout ->
+		$('.alert').fadeOut("slow")
+	,2700

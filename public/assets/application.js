@@ -12564,10 +12564,14 @@ if (typeof module !== 'undefined' && module.exports) {
       minFontSize: '26px',
       maxFontSize: '62px'
     });
-    return $(".pixelate p").fitText(1, {
+    $(".pixelate p").fitText(1, {
       minFontSize: '16px',
       maxFontSize: '22px'
     });
+    $(".alert .close").hide();
+    return setTimeout(function() {
+      return $('.alert').fadeOut("slow");
+    }, 2700);
   });
 
 }).call(this);

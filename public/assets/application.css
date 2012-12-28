@@ -9372,18 +9372,28 @@ ul.icons li .icon-large:before {
 }
 /* bootstrap overrides */
 .alert {
-  background: none;
-  border: none;
-  font-weight: bold;
-  font-size: 13px;
+  background: rgba(252, 252, 252, 0.2);
+  border: 1px solid #eee;
+  font-size: 15px;
+  font-weight: 200;
   text-align: center;
   margin-bottom: 0;
-  padding: 0px;
-  float: left;
-  float: left;
+  padding: 8px 0;
   position: relative;
   text-align: center;
   width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+body.pages.index .alert {
+  border: 1px solid #eee;
+}
+body.pages.index .alert .close {
+  color: #fff;
 }
 .alert-alert {
   color: #B94A48;
@@ -9392,11 +9402,9 @@ ul.icons li .icon-large:before {
   color: #333;
 }
 .alert .close {
-  position: relative;
-  top: -2px;
-  right: 0;
-  float: none;
-  margin-left: 10px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
 }
 ul.dropdown-menu {
   background-color: none;
