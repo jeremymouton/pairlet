@@ -9650,6 +9650,7 @@ body.pages.index {
   background: #c92a2a url('layout/pixelated_bg.png');
   background-position: top left;
   background-attachment: fixed;
+  font-weight: normal;
 }
 body.pages.index h1,
 body.pages.index h2,
