@@ -1,7 +1,7 @@
 class Flirt < ActiveRecord::Base
   before_save :default_values
   belongs_to :user
-  attr_accessible :user_id, :provider, :handle
+  attr_accessible :avatar, :provider, :handle
 
   # TODO
   # Need to implement destroy dependency.
@@ -16,6 +16,16 @@ class Flirt < ActiveRecord::Base
 
   def default_values
     self.matched ||= 'false'
+    self.avatar = get_avatar(self.handle)
+  end
+
+  def get_avatar(username)
+    if self.provider == 'facebook'
+      @graph = Koala::Facebook::API.new()
+      avatar = @graph.get_picture("#{username}")
+    elsif self.provider == 'twitter'
+      avatar = Twitter.user("#{username}").profile_image_url rescue nil
+    end
   end
 
 end

@@ -1,8 +1,8 @@
 <div class="account-<%= link.provider %> <%= @providers.include? link.provider %> ">
-	<i class="icon-<%= link.provider %>"></i>
+	<i class="icon-<%= link.provider %>-sign"></i>
 	<% if @providers.include? "#{link.provider}"  %>
 	  <span><%= link.handle %></span>
 	<% end %>
 
-	<%= link_to raw('<i class="icon-remove"></i>'), link, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to raw('<i class="icon-remove"></i>'), link, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete' %>
 </div>

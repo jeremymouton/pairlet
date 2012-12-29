@@ -5,13 +5,7 @@
 
 body {
   color: @black;
-  
-  &.pages.index {
-    color: @white;
-    background: @red url('layout/pixelated_bg.png');
-    background-position: top left;
-    background-attachment: fixed;
-  }
+  font-weight: 200;
 }
 
 a {
@@ -102,13 +96,19 @@ p.info {
 
   .profile_img {
     border: 1px solid #eee;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     display: block;
     float: left;
     margin-top: 12px;
     margin-right: 10px;
   }
+
+  .profile_img,
+  .profile_img img {
+    .border-radius(4px);
+  }
+
   .clone {
     border: none;
     outline: none;
@@ -192,19 +192,39 @@ p.info {
     color: #bbb;
     font-style: italic;
   }
-}
 
-.current-flirt {
-  padding-left: 2px;
-  span {
-    font-size: 12px;
-    color: #ccc;
-    opacity:0;
-  }
-
-  &:hover {
+  .current-flirt { /* flirt items */
+    padding-left: 2px;
+    position: relative;
+    .delete {
+      margin-top: 15px;
+    }
     span {
-      opacity:1;
+      font-size: 12px;
+      color: #ccc;
+      opacity:0;
+    }
+
+    .icon-heart {
+      position: absolute;
+      left: 38px;
+      top: -5px;
+      font-size: 25px;
+    }
+
+    @th: 48px;
+
+    img.flirt-avatar {
+      width: @th;
+      height: @th;
+      background: #eee;
+      .border-radius(4px);
+    }
+
+    &:hover {
+      span {
+        opacity:1;
+      }
     }
   }
 }
@@ -216,40 +236,40 @@ p.info {
 .account-facebook {
   margin-bottom: 10px;
   
+  a,
+  span {
+    padding-left: 16px;
+    font-size: 16px;
+    font-weight: 200;
+    a {
+      padding-left: 0;
+      color: #888;
+    }
+  }
+  
   > i {
-    color: #ccc;
-    font-size: 17px;
+    color: #ddd;
+    font-size: 37px;
     position: relative;
-    top: 2px;
+    top: 8px;
   
     &.icon-heart {
       color: @red;
     }
   }
-
-  a,
-  span {
-    padding-left: 8px;
-    a {
-      font-size: 12px;
-      color: #888;
-      display: inline-block;
-    }
-  }
-
-  .icon-remove {
-    float: right;
-    margin-right: 5px;
-    position: relative;
-    top: 1px;
-  }
+}
+.delete {
+  float: right;
+  display: block;
 }
 
 .icon-remove {
   color: #ccc;
   font-size: 13px;
   display: block;
+  margin-right: 5px;
 }
+
 .account-twitter,
 .account-facebook {
   padding-left: 2px;
@@ -262,10 +282,6 @@ p.info {
   }
 }
 .account-facebook {
-  > i {
-    padding: 0 3px 0 5px;
-  }
-  span,
   &.true {
     > i {
       color: @fb;
@@ -276,8 +292,8 @@ p.info {
 // Accounts
 
 .my-accounts {
-  a {
-    padding-left: 0;
+  .delete {
+    margin-top: 10px;
   }
 }
 

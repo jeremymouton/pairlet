@@ -43,3 +43,9 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
+
+# Facebook Graph API
+gem 'koala'
+
+# Twitter API
+gem 'twitter'

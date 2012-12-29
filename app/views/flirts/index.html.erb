@@ -62,13 +62,13 @@
 
     <% unless @providers.include? 'twitter'  %>
       <div class="account-twitter">
-        <i class="icon-twitter"></i>
+        <i class="icon-twitter-sign"></i>
         <span><%= link_to "Authorize my Twitter account", user_omniauth_authorize_path(:twitter) %></span>
       </div>
     <% end %>
     <% unless @providers.include? 'facebook' %>
       <div class="account-facebook">
-        <i class="icon-facebook"></i>
+        <i class="icon-facebook-sign"></i>
         <span><%= link_to "Authorize my Facebook account", user_omniauth_authorize_path(:facebook) %></span>
       </div>
     <% end %>
