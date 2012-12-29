@@ -12472,7 +12472,7 @@ if (typeof module !== 'undefined' && module.exports) {
 (function() {
 
   jQuery(function() {
-    var $action_btn, $add_form, $btn_fb, $btn_tw, $cancel, $flirt_handle, $flirt_provider, $info_fb, $info_tw;
+    var $action_btn, $add_form, $btn_fb, $btn_tw, $cancel, $field, $flirt_handle, $flirt_provider, $info_fb, $info_tw;
     $add_form = '.add-flirt #add-form';
     $btn_fb = '.add-flirt .box-facebook';
     $btn_tw = '.add-flirt .box-twitter';
@@ -12482,6 +12482,7 @@ if (typeof module !== 'undefined' && module.exports) {
     $info_tw = '.add-flirt .info-twitter';
     $info_fb = '.add-flirt .info-facebook';
     $cancel = '.add-flirt .btn-cancel';
+    $field = '.form-inline input[type=text]';
     $($add_form).hide();
     $($info_tw).hide();
     $($info_fb).hide();
@@ -12489,21 +12490,60 @@ if (typeof module !== 'undefined' && module.exports) {
       $($action_btn).show();
       $($add_form).hide();
       $($info_tw).hide();
-      return $($info_fb).hide();
+      $($info_fb).hide();
+      $($field).unbind().val('');
+      $('input.btn-red').show();
+      return $('a.submit').remove();
     });
     $($btn_fb).click(function() {
       $($action_btn).hide();
       $($add_form).show();
-      $($flirt_provider).val('facebook').css('display', 'none');
+      $($flirt_provider).val('facebook').addClass('hidden');
       $(flirt_handle).attr('placeholder', 'Facebook Username');
-      return $($info_fb).show();
+      $($info_fb).show();
+      $('.submit').addClass('hidden');
+      $($field).on({
+        keyup: function() {
+          var timer;
+          if (timer) {
+            clearTimeout(timer);
+          }
+          return timer = setTimeout(function() {
+            var txtClone;
+            txtClone = $($field).val();
+            $('.clone').attr('src', 'https://graph.facebook.com/' + txtClone + '/picture');
+            return $('input.btn-red, .clone').removeClass('hidden').error(function() {
+              $('.clone').addClass('hidden');
+              return $('input.btn-red').addClass('hidden');
+            });
+          }, 600);
+        }
+      });
+      return $($field).bind("keypress", function(event) {
+        var key, regex;
+        regex = new RegExp("^[a-z0-9\d_\d.]+$");
+        key = String.fromCharCode((!event.charCode ? event.which : event.charCode));
+        if (!regex.test(key)) {
+          event.preventDefault();
+          return false;
+        }
+      });
     });
     return $($btn_tw).click(function() {
       $($action_btn).hide();
       $($add_form).show();
-      $($flirt_provider).val('twitter').css('display', 'none');
-      $(flirt_handle).attr('placeholder', 'Twitter Username');
-      return $($info_tw).show();
+      $($flirt_provider).val('twitter').addClass('hidden');
+      $(flirt_handle).attr('placeholder', '@username');
+      $($info_tw).show();
+      return $($field).bind("keypress", function(event) {
+        var key, regex;
+        regex = new RegExp("^[a-z0-9\d_\d.]+$");
+        key = String.fromCharCode((!event.charCode ? event.which : event.charCode));
+        if (!regex.test(key)) {
+          event.preventDefault();
+          return false;
+        }
+      });
     });
   });
 
