@@ -84,11 +84,50 @@ p.info {
   padding-left: 10px;
   color: #aaa;
   font-size: 12px;
-  margin-top: -12px;
+  
   padding-top: 0;
   b, 
   strong {
     color: #666;  
+  }
+}
+
+#add-form {
+  form {
+    margin: 0;
+  }
+}
+
+#info {
+  .clone,
+  .help {
+    float:left;
+  }
+
+  .profile_img {
+    border: 1px solid #eee;
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+    margin-top: 12px;
+    margin-right: 10px;
+  }
+  .clone {
+    border: none;
+    outline: none;
+  }
+
+  .btn-cancel {
+    .clear;
+    float: left;
+    margin-top: 15px;
+  }
+
+  .info-facebook {
+    .help {
+      margin-top: 18px; 
+    }
   }
 }
 
@@ -245,11 +284,13 @@ p.info {
     a {
       font-size: 12px;
       color: #888;
+      display: inline-block;
     }
   }
 
   .icon-remove {
     float: right;
+    margin-right: 5px;
     position: relative;
     top: 1px;
   }
@@ -258,6 +299,7 @@ p.info {
 .icon-remove {
   color: #ccc;
   font-size: 13px;
+  display: block;
 }
 .account-twitter,
 .account-facebook {

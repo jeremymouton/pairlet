@@ -3,8 +3,7 @@
     
     <% if @providers.empty? %>
       <h1>Thanks for signing up!</h1>
-      <p>The first step is to authorize your accounts:</p>
-      <p class="info">Pairlet will only store your username.</p>
+      <p>First, you need to authorize at least one of your accounts:</p>
     <% else %>
     <h1>Add a flirt</h1>
     <div class="row-fluid">
@@ -21,12 +20,14 @@
 
       <div id="info">
         <div class="info-twitter">
-          <p class="help">www.twitter.com/<b>username</b> or @<b>username</b></p>
           <span class="btn btn-cancel">cancel</span>
         </div>
 
         <div class="info-facebook">
-          <p class="help">www.facebook.com/<b>username</b> <br/>(sometimes has dots ".", i.e "john.smith")</p>
+          <span class="profile_img">
+            <img src="" class="clone" alt=""/>
+          </span>
+          <p class="help">www.facebook.com/<b>username</b> <br/><em>sometimes has dots and numbers, i.e "john.smith.4"</em></p>
           <span class="btn btn-cancel">cancel</span>
         </div>
       </div> <!-- #info -->
@@ -71,6 +72,9 @@
         <span><%= link_to "Authorize my Facebook account", user_omniauth_authorize_path(:facebook) %></span>
       </div>
     <% end %>
+
+    <%= @fb_friends %>
+    <%= @fb_obj %>
   </div>
 
     

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226175614) do
+ActiveRecord::Schema.define(:version => 20121228215901) do
 
   create_table "flirts", :force => true do |t|
     t.string   "handle"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20121226175614) do
     t.datetime "updated_at", :null => false
     t.string   "provider"
     t.boolean  "matched"
+    t.string   "uid"
   end
 
   add_index "flirts", ["user_id"], :name => "index_flirts_on_user_id"
@@ -28,8 +29,11 @@ ActiveRecord::Schema.define(:version => 20121226175614) do
     t.string   "provider"
     t.string   "handle"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "links", ["user_id"], :name => "index_links_on_user_id"

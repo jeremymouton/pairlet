@@ -1,6 +1,6 @@
 <%= form_for(@flirt, :html => { :class => "form-inline"}) do |f| %>
     <%= f.select(:provider, options_for_select([['Select network', ''], ['Twitter', 'twitter'], ['Facebook', 'facebook']], 1)) %>
-    <%= f.text_field :handle, :placeholder => 'Username' %>
+    <%= f.text_field :handle, :placeholder => 'Username', :autocomplete => 'off' %>
 
     <%= f.submit 'Add', :class => 'btn btn-red' %>
 <% end %>

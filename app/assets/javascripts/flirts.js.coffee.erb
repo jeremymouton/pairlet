@@ -10,39 +10,81 @@ jQuery -> # begin ugliest javascript ever
   $add_form       = '.add-flirt #add-form'
   $btn_fb         = '.add-flirt .box-facebook'
   $btn_tw         = '.add-flirt .box-twitter'
-  $action_btn	  = '.add-flirt .box-facebook, .add-flirt .box-twitter'
+  $action_btn	    = '.add-flirt .box-facebook, .add-flirt .box-twitter'
   $flirt_provider = '.add-flirt #flirt_provider'
   $flirt_handle   = '.add-flirt #flirt_handle'
-  $info_tw		  = '.add-flirt .info-twitter'
-  $info_fb		  = '.add-flirt .info-facebook'
+  $info_tw		    = '.add-flirt .info-twitter'
+  $info_fb		    = '.add-flirt .info-facebook'
   $cancel         = '.add-flirt .btn-cancel'
+  $field          = '.form-inline input[type=text]'
  
   $($add_form).hide()
   $($info_tw).hide()
   $($info_fb).hide()
 
+  # --------
   # cancel button hides elements
+
   $($cancel).click -> 
-  	$($action_btn).show()
-  	$($add_form).hide()
-  	$($info_tw).hide()
-  	$($info_fb).hide()
+    $($action_btn).show()
+    $($add_form).hide()
+    $($info_tw).hide()
+    $($info_fb).hide()
+    $($field).unbind().val('')
+    $('input.btn-red').show()
+    $('a.submit').remove()
 
 
+  # --------
   # Set Facebook flirt entry info
+
   $($btn_fb).click ->
     $($action_btn).hide()
     $($add_form).show()
-    $($flirt_provider).val('facebook').css('display','none')
+    $($flirt_provider).val('facebook').addClass('hidden')
     $(flirt_handle).attr('placeholder', 'Facebook Username')
     $($info_fb).show()
+    # $('input.btn-red').css('pointer-events','none')
+    
+    $('.submit').addClass('hidden')
+    # show FB profile pic
+    $($field).on keyup: ->
+      clearTimeout timer  if timer
+      timer = setTimeout( ->
+        txtClone = $($field).val()
+        $('.clone').attr('src', 'https://graph.facebook.com/' + txtClone + '/picture')
+        $('input.btn-red, .clone').removeClass('hidden')
+        .error ->
+          $('.clone').addClass('hidden')
+          $('input.btn-red').addClass('hidden')
+      , 600)
 
+    # js validation
+    $($field).bind "keypress", (event) ->
+      regex = new RegExp("^[a-z0-9\d_\d.]+$")
+      key = String.fromCharCode((if not event.charCode then event.which else event.charCode))
+      unless regex.test(key)
+        event.preventDefault()
+        false
 
+  # --------
   # Set Twitter flirt entry info
+
   $($btn_tw).click ->
     $($action_btn).hide()
     $($add_form).show()
-    $($flirt_provider).val('twitter').css('display','none')
-    $(flirt_handle).attr('placeholder', 'Twitter Username')
+    $($flirt_provider).val('twitter').addClass('hidden')
+    $(flirt_handle).attr('placeholder', '@username')
     $($info_tw).show()
+
+
+    # js validation
+    $($field).bind "keypress", (event) ->
+      regex = new RegExp("^[a-z0-9\d_\d.]+$")
+      key = String.fromCharCode((if not event.charCode then event.which else event.charCode))
+      unless regex.test(key)
+        event.preventDefault()
+        false
+
+    # $($info_tw).show()
 
