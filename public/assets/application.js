@@ -12492,7 +12492,7 @@ if (typeof module !== 'undefined' && module.exports) {
       $($info_tw).hide();
       $($info_fb).hide();
       $($field).unbind().val('');
-      $('input.btn-red').show();
+      $('input.btn-red').removeClass('hidden');
       return $('a.submit').remove();
     });
     $($btn_fb).click(function() {
