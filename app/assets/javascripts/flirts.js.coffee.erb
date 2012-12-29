@@ -31,9 +31,8 @@ jQuery -> # begin ugliest javascript ever
     $($info_tw).hide()
     $($info_fb).hide()
     $($field).unbind().val('')
-    $('input.btn-red').removeClass('hidden')
     $('a.submit').remove()
-
+    $('.clone').attr('src', '')
 
   # --------
   # Set Facebook flirt entry info
@@ -44,19 +43,16 @@ jQuery -> # begin ugliest javascript ever
     $($flirt_provider).val('facebook').addClass('hidden')
     $(flirt_handle).attr('placeholder', 'Facebook Username')
     $($info_fb).show()
-    # $('input.btn-red').css('pointer-events','none')
-    
-    $('.submit').addClass('hidden')
+   
     # show FB profile pic
     $($field).on keyup: ->
       clearTimeout timer  if timer
       timer = setTimeout( ->
         txtClone = $($field).val()
         $('.clone').attr('src', 'https://graph.facebook.com/' + txtClone + '/picture')
-        $('input.btn-red, .clone').removeClass('hidden')
+        $('.clone').removeClass('hidden')
         .error ->
           $('.clone').addClass('hidden')
-          $('input.btn-red').addClass('hidden')
       , 600)
 
     # js validation
@@ -77,7 +73,6 @@ jQuery -> # begin ugliest javascript ever
     $(flirt_handle).attr('placeholder', '@username')
     $($info_tw).show()
 
-
     # js validation
     $($field).bind "keypress", (event) ->
       regex = new RegExp("^[a-z0-9\d_\d.]+$")
@@ -85,6 +80,3 @@ jQuery -> # begin ugliest javascript ever
       unless regex.test(key)
         event.preventDefault()
         false
-
-    # $($info_tw).show()
-

@@ -68,10 +68,6 @@ span.small {
   font-size: 80%;
 }
 
-.center { 
-  text-align: center;
-}
-
 p.info {
   font-size: 85%;
   width: 100%; 
@@ -129,51 +125,6 @@ p.info {
       margin-top: 18px; 
     }
   }
-}
-
-// Navigation
-
-.navbar {
-  .navbar-inner {
-    background: rgba(255, 255, 255, 0.97);
-    padding-top: 13px;
-    padding-bottom: 5px;
-  }
-
-  li a {
-    color: @black;
-    text-shadow: none;
-    font-size: 13px;
-    font-weight: normal;
-  }
-
-  .nav.pull-right {
-    margin-right: 10px;
-  }
-
-  .nav > li > a {
-    padding: 7px 15px 10px;
-  }
-
-  .nav-collapse .nav > li > a, 
-  .nav-collapse .dropdown-menu a {
-    font-weight: normal;
-  }
-
-  .btn-navbar,
-  .btn-navbar:hover,
-  .btn-navbar:active {
-    background: #eee;
-    box-shadow: none;
-    .icon-bar {
-      background: #ccc;
-      box-shadow: none;
-    }
-  }
-}
-
-.center {
-  text-align: center;
 }
 
 // --------------
@@ -242,8 +193,6 @@ p.info {
     font-style: italic;
   }
 }
-
-// mutual
 
 .current-flirt {
   padding-left: 2px;
@@ -329,88 +278,6 @@ p.info {
 .my-accounts {
   a {
     padding-left: 0;
-  }
-}
-
-// Logo styles
-
-#csslogo {
-  padding: 3px 20px 0px;
-  .pull-left;
-  width: 108px;
-  margin-left: 5px;
-  display: inline-block;
-
-  .flirt {
-    font-size: 24px;
-    color: @black;
-    position: relative;
-    left: 37px;
-    font-weight: normal;
-    
-    // &:after {
-    //   content: 'α';
-    //   color: #ddd;
-    //   font-weight: 200;
-    //   font-size: 11px;
-    //   top: -15px;
-    //   right: 33px;
-    //   position: absolute;
-    // }
-  }
-
-  &:hover {
-    text-decoration: none;
-    .heart span {
-      .transition(0.1s);
-      background: @redDark;
-    }
-  }
-}
-
-.heart {
-  top: 3px;
-  width: 25px;
-  position: relative;
-  @width: 6px;
-  @height: 5px;
-
-  span {
-    .transition(0.1s);
-    background: @red;
-    display: block;
-    position: absolute;
-    width: @width;
-  }
-
-  .section1 {
-    height: @height*2;
-    width: @width*5;
-  }
-
-  .section2 {
-    left: @width;
-    top: -@height;
-    height: @height;
-  }
-
-  .section3 {
-    left: @width*3;
-    top: -@height;
-    height: @height;
-  }
- 
-  .section4 { /* bottom piece */
-    left: @width*2;
-    top: @height*3;
-    height: @width;
-  }
-
-  .section5 {
-    left: @width;
-    top: @height*2;
-    height: @height;
-    width: @width*3;
   }
 }
 
