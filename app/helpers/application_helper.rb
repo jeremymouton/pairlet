@@ -10,8 +10,7 @@ module ApplicationHelper
     content_tag(:div, :class => 'span6 offset3') do
       flash.collect do |type, message|
         content_tag(:div, :class => "alert alert-#{type}") do
-          raw(message) +
-          content_tag(:button, raw('&times;'), :class => 'close', :type => 'button', :data => { :dismiss => 'alert'})
+          raw(message)
         end
 
       end.join("\n").html_safe
