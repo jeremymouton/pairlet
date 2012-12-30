@@ -197,12 +197,20 @@ p.info {
     padding-left: 2px;
     position: relative;
     .delete {
-      margin-top: 15px;
+      margin-top: 12px;
     }
+
     span {
-      font-size: 12px;
-      color: #ccc;
-      opacity:0;
+      padding-left: 12px;
+    }
+    
+    em {
+      display: none;
+      padding-left: 10px;
+      a {
+        font-size: 12px;
+        color: #888;
+      }
     }
 
     .icon-heart {
@@ -222,8 +230,8 @@ p.info {
     }
 
     &:hover {
-      span {
-        opacity:1;
+      em {
+        display: inline-block;
       }
     }
   }
@@ -238,7 +246,7 @@ p.info {
   
   a,
   span {
-    padding-left: 16px;
+    
     font-size: 16px;
     font-weight: 200;
     a {
@@ -292,8 +300,11 @@ p.info {
 // Accounts
 
 .my-accounts {
+  span {
+    padding-left: 12px;
+  }
   .delete {
-    margin-top: 10px;
+    margin-top: 8px;
   }
 }
 

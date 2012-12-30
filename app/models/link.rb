@@ -13,7 +13,7 @@ class Link < ActiveRecord::Base
       link.provider = auth.provider
       link.handle = auth.info.nickname
       link.uid = auth.uid
-      # link.name = auth.info.name
+      link.name = auth.info.name
       link.oauth_token = auth.credentials.token rescue nil
       link.oauth_expires_at = Time.at(auth.credentials.expires_at) rescue nil
     end

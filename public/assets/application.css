@@ -9372,10 +9372,10 @@ ul.icons li .icon-large:before {
 }
 /* bootstrap overrides */
 .alert {
-  background: rgba(252, 252, 252, 0.2);
-  border: 1px solid #eee;
+  background: rgba(209, 229, 241, 0.2);
   font-size: 15px;
-  font-weight: 200;
+  border: none;
+  font-weight: normal;
   text-align: center;
   margin-bottom: 0;
   padding: 8px 0;
@@ -9391,6 +9391,7 @@ ul.icons li .icon-large:before {
 }
 .alert-alert {
   color: #B94A48;
+  background: rgba(201, 41, 41, 0.2);
 }
 .alert-notice {
   color: #333;
@@ -9665,6 +9666,7 @@ body.pages.index .alert {
   color: #ffffff;
   text-shadow: none;
   border: 1px solid #eee;
+  background: rgba(252, 252, 252, 0.2);
 }
 body.pages.index .alert .close {
   color: #fff;
@@ -9828,6 +9830,11 @@ body.pages.index .how-explain p.disclosure:hover {
   background: rgba(255, 255, 255, 0.97);
   padding-top: 13px;
   padding-bottom: 5px;
+}
+.navbar li span {
+  top: 6px;
+  right: 15px;
+  position: relative;
 }
 .navbar li a {
   color: #232323;
@@ -10027,12 +10034,18 @@ p.info {
   position: relative;
 }
 .currently-flirting .current-flirt .delete {
-  margin-top: 15px;
+  margin-top: 12px;
 }
 .currently-flirting .current-flirt span {
+  padding-left: 12px;
+}
+.currently-flirting .current-flirt em {
+  display: none;
+  padding-left: 10px;
+}
+.currently-flirting .current-flirt em a {
   font-size: 12px;
-  color: #ccc;
-  opacity: 0;
+  color: #888;
 }
 .currently-flirting .current-flirt .icon-heart {
   position: absolute;
@@ -10051,8 +10064,8 @@ p.info {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.currently-flirting .current-flirt:hover span {
-  opacity: 1;
+.currently-flirting .current-flirt:hover em {
+  display: inline-block;
 }
 .current-flirt,
 .account-twitter,
@@ -10065,7 +10078,6 @@ p.info {
 .current-flirt span,
 .account-twitter span,
 .account-facebook span {
-  padding-left: 16px;
   font-size: 16px;
   font-weight: 200;
 }
@@ -10111,8 +10123,11 @@ p.info {
 .account-facebook.true > i {
   color: #3b5998;
 }
+.my-accounts span {
+  padding-left: 12px;
+}
 .my-accounts .delete {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 /* Footer */
 .footer {
@@ -10207,9 +10222,6 @@ input[type=password] {
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  body.pages.index .how {
-    background: none;
-  }
   #csslogo {
     margin-left: 0;
     padding-left: 15px;

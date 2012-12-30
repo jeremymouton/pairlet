@@ -12606,10 +12606,10 @@ if (typeof module !== 'undefined' && module.exports) {
       minFontSize: '16px',
       maxFontSize: '22px'
     });
-    $(".alert .close").hide();
     return setTimeout(function() {
-      return $('.alert').parent().fadeOut("slow").hide();
-    }, 2700);
+      $('.alert').fadeOut('slow');
+      return $('.alert').parent().hide();
+    }, 2200);
   });
 
 }).call(this);
