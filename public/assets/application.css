@@ -10257,6 +10257,9 @@ input[type=password] {
     float: left;
     float: left;
   }
+  .signup {
+    text-align: center;
+  }
   .signup .btn-twitter {
     margin-bottom: 0px;
   }
