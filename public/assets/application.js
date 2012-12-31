@@ -12501,6 +12501,7 @@ if (typeof module !== 'undefined' && module.exports) {
       $($flirt_provider).val('facebook').addClass('hidden');
       $(flirt_handle).attr('placeholder', 'Facebook Username');
       $($info_fb).show();
+      $('.clone').addClass('hidden');
       $($field).on({
         keyup: function() {
           var timer;
@@ -12519,7 +12520,7 @@ if (typeof module !== 'undefined' && module.exports) {
       });
       return $($field).bind("keypress", function(event) {
         var key, regex;
-        regex = new RegExp("^[a-z0-9\d_\d.]+$");
+        regex = new RegExp("^[a-zA-Z0-9\d_\d.]+$");
         key = String.fromCharCode((!event.charCode ? event.which : event.charCode));
         if (!regex.test(key)) {
           event.preventDefault();
@@ -12535,7 +12536,7 @@ if (typeof module !== 'undefined' && module.exports) {
       $($info_tw).show();
       return $($field).bind("keypress", function(event) {
         var key, regex;
-        regex = new RegExp("^[a-z0-9\d_\d.]+$");
+        regex = new RegExp("^[a-zA-Z0-9\d_\d.]+$");
         key = String.fromCharCode((!event.charCode ? event.which : event.charCode));
         if (!regex.test(key)) {
           event.preventDefault();
@@ -12598,11 +12599,11 @@ if (typeof module !== 'undefined' && module.exports) {
 (function() {
 
   jQuery(function() {
-    $(".pixelate h1").fitText(1, {
+    $("h1.scale").fitText(1, {
       minFontSize: '26px',
       maxFontSize: '62px'
     });
-    $(".pixelate p").fitText(1, {
+    $("p.scale").fitText(1, {
       minFontSize: '16px',
       maxFontSize: '22px'
     });

@@ -38,15 +38,26 @@
     text-shadow: none;
   }
 
+  &.btn-twitter,
+  &.btn-facebook {
+    font-size: 14px;
+    text-align: left;
+    i {
+      font-size: 18px;
+      position: relative;
+      top: 2px;
+    }
+  }
+
+
   &.btn-twitter {
     .border-radius(0px);
     border: none;
     text-shadow: none;
     #gradient > .vertical(@tw, @tw);
     color: @white;
-    
     i {
-      text-shadow: none;
+      left: -3px;
     }
   }
 
@@ -56,6 +67,9 @@
     text-shadow: none;
     #gradient > .vertical(@fb, @fb);
     color: @white;
+    i {
+      padding-right: 9px;
+    }
   }
 }
 

@@ -9,6 +9,10 @@ layout/pixelated_bg.png: layout/pixelated_bg.png
 layout/pixelated_bg/index.png: layout/pixelated_bg.png
 pairlet.png: pairlet.png
 pairlet/index.png: pairlet.png
+slides/screen1.jpg: slides/screen1.jpg
+slides/screen1/index.jpg: slides/screen1.jpg
+slides/screen2.jpg: slides/screen2.jpg
+slides/screen2/index.jpg: slides/screen2.jpg
 touch/apple-touch-icon-precomposed.png: touch/apple-touch-icon-precomposed.png
 touch/apple-touch-icon-precomposed/index.png: touch/apple-touch-icon-precomposed.png
 touch/h/apple-touch-icon.png: touch/h/apple-touch-icon.png

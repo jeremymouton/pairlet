@@ -9,8 +9,24 @@
   body {
     padding-top: 65px;
   }
+
+  .signup {
+    .btn-twitter {
+      margin-bottom: 8px;
+    }
+  }
+
+  .delete {
+    display: none;
+  }
 }
- 
+
+@media (max-width: 979px) and (min-width: 768px) {
+  .help.span10 {
+    width: 79.872928%;
+  }
+}
+
 /* Portrait tablet to landscape and desktop */
 @media (max-width: 979px) {
   .navbar-fixed-top .navbar-inner, 
@@ -23,6 +39,16 @@
       margin-top: 15px;
     }
   }
+
+  .help {
+    border-left: 0;
+  }
+
+  .signup {
+    .btn-twitter {
+      margin-bottom: 8px;
+    }
+  }
 }
  
 /* Landscape phone to portrait tablet */
@@ -31,6 +57,23 @@
   .flirts .box-facebook {
     width: 49%;
     .pull-left;
+  }
+
+  .signup {
+    .btn-twitter {
+      margin-bottom: 0px;
+    }
+  }
+
+  .screenshots {
+    div {
+      text-align: center !important;
+      margin-bottom: 10px;
+    }
+  }
+
+  .how {
+    text-align: center;
   }
 
   .flirts .box-twitter {
@@ -48,5 +91,29 @@
   #csslogo {
     margin-left: 0;
     padding-left: 15px;
+  }
+
+  input {
+    width: 180px;
+  }
+
+  .signup {
+    .btn-twitter {
+      margin-bottom: 8px;
+    }
+  }
+
+  .how-explain {
+    h3 {
+      text-align: center;
+    }
+  }
+
+  .current-flirt {
+    &:hover {
+      em {
+        // display: none;
+      }
+    }
   }
 }

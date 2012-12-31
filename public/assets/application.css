@@ -9577,6 +9577,17 @@ ul.dropdown-menu li a:hover {
   margin-right: 5px;
   text-shadow: none;
 }
+.btn.btn-twitter,
+.btn.btn-facebook {
+  font-size: 14px;
+  text-align: left;
+}
+.btn.btn-twitter i,
+.btn.btn-facebook i {
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+}
 .btn.btn-twitter {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -9605,7 +9616,7 @@ ul.dropdown-menu li a:hover {
   color: #ffffff;
 }
 .btn.btn-twitter i {
-  text-shadow: none;
+  left: -3px;
 }
 .btn.btn-facebook {
   -webkit-border-radius: 0px;
@@ -9633,6 +9644,9 @@ ul.dropdown-menu li a:hover {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff3b5998', GradientType=0);
   color: #ffffff;
+}
+.btn.btn-facebook i {
+  padding-right: 9px;
 }
 /* Cancel link */
 .link-cancel {
@@ -9675,27 +9689,32 @@ body.pages.index .footer p,
 body.pages.index .footer p a {
   color: #eee;
 }
+body.pages.index .screenshots {
+  margin-top: 20px;
+}
+body.pages.index .screenshots div:first-child {
+  text-align: right;
+}
+body.pages.index .screenshots img {
+  -webkit-box-shadow: 0px 1px 8px 1px #7b1a1b;
+  -moz-box-shadow: 0px 1px 8px 1px #7b1a1b;
+  box-shadow: 0px 1px 8px 1px #7b1a1b;
+  -webkit-box-shadow: 0px 1px 8px 1px #7b1a1b;
+  -moz-box-shadow: 0px 1px 8px 1px #7b1a1b;
+  box-shadow: 0px 1px 8px 1px #7b1a1b;
+}
 body.pages.index .addthis_toolbox {
   margin-top: 30px;
 }
-body.pages.index .how {
+body.pages.index .content .span4 {
   padding: 15px 0 10px 0;
+}
+body.pages.index .how {
   font-size: 15px;
-  text-align: center;
 }
 body.pages.index .how-explain p {
   line-height: 1.3em;
   font-size: 16px;
-}
-body.pages.index .how-explain p.disclosure {
-  opacity: 0.4;
-  line-height: 1.1em;
-  margin-top: 30px;
-  font-size: 13px;
-}
-body.pages.index .how-explain p.disclosure:hover {
-  opacity: 1;
-  cursor: default;
 }
 .addthis_toolbox {
   padding-left: 18px;
@@ -9711,8 +9730,8 @@ body.pages.index .how-explain p.disclosure:hover {
   text-shadow: 0 1px 0 #5c0000;
   color: #ffffff;
   text-align: center;
-  padding: 23px 0 20px 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   font-weight: normal;
 }
 .pixelate .container-fluid {
@@ -9735,12 +9754,17 @@ body.pages.index .how-explain p.disclosure:hover {
 }
 .signup {
   font-weight: 200;
+  margin-bottom: 30px;
 }
-.signup h2 {
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: 400;
-  margin: 15px 0;
+.signup p.disclosure {
+  opacity: 0.4;
+  line-height: 1.1em;
+  margin-top: 30px;
+  font-size: 13px;
+}
+.signup p.disclosure:hover {
+  opacity: 1;
+  cursor: default;
 }
 #csslogo {
   padding: 3px 20px 0px;
@@ -9922,10 +9946,9 @@ p.info {
   font-style: italic;
 }
 .help {
-  border-left: 1px solid #eee;
-  padding-left: 10px;
   color: #aaa;
   font-size: 12px;
+  line-height: 14px;
   padding-top: 0;
 }
 .help b,
@@ -9934,10 +9957,6 @@ p.info {
 }
 #add-form form {
   margin: 0;
-}
-#info .clone,
-#info .help {
-  float: left;
 }
 #info .profile_img {
   border: 1px solid #eee;
@@ -10030,20 +10049,26 @@ p.info {
 .currently-flirting .current-flirt {
   /* flirt items */
 
-  padding-left: 2px;
   position: relative;
+  padding-left: 2px;
+  float: left;
+  width: 100%;
 }
 .currently-flirting .current-flirt .delete {
   margin-top: 12px;
 }
-.currently-flirting .current-flirt span {
+.currently-flirting .current-flirt div {
   padding-left: 12px;
+  float: left;
 }
-.currently-flirting .current-flirt em {
-  display: none;
-  padding-left: 10px;
+.currently-flirting .current-flirt div span {
+  top: 3px;
+  position: relative;
 }
-.currently-flirting .current-flirt em a {
+.currently-flirting .current-flirt div em {
+  display: block;
+}
+.currently-flirting .current-flirt div a {
   font-size: 12px;
   color: #888;
 }
@@ -10054,6 +10079,7 @@ p.info {
   font-size: 25px;
 }
 .currently-flirting .current-flirt img.flirt-avatar {
+  float: left;
   width: 48px;
   height: 48px;
   background: #eee;
@@ -10063,9 +10089,6 @@ p.info {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-}
-.currently-flirting .current-flirt:hover em {
-  display: inline-block;
 }
 .current-flirt,
 .account-twitter,
@@ -10102,6 +10125,11 @@ p.info {
 .account-twitter > i.icon-heart,
 .account-facebook > i.icon-heart {
   color: #c92a2a;
+}
+.current-flirt:hover .delete,
+.account-twitter:hover .delete,
+.account-facebook:hover .delete {
+  display: block;
 }
 .delete {
   float: right;
@@ -10193,6 +10221,17 @@ input[type=password] {
   body {
     padding-top: 65px;
   }
+  .signup .btn-twitter {
+    margin-bottom: 8px;
+  }
+  .delete {
+    display: none;
+  }
+}
+@media (max-width: 979px) and (min-width: 768px) {
+  .help.span10 {
+    width: 79.872928%;
+  }
 }
 /* Portrait tablet to landscape and desktop */
 @media (max-width: 979px) {
@@ -10203,6 +10242,12 @@ input[type=password] {
   .nav-collapse .nav {
     margin-top: 15px;
   }
+  .help {
+    border-left: 0;
+  }
+  .signup .btn-twitter {
+    margin-bottom: 8px;
+  }
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
@@ -10211,6 +10256,16 @@ input[type=password] {
     width: 49%;
     float: left;
     float: left;
+  }
+  .signup .btn-twitter {
+    margin-bottom: 0px;
+  }
+  .screenshots div {
+    text-align: center !important;
+    margin-bottom: 10px;
+  }
+  .how {
+    text-align: center;
   }
   .flirts .box-twitter {
     margin-right: 5px;
@@ -10225,5 +10280,14 @@ input[type=password] {
   #csslogo {
     margin-left: 0;
     padding-left: 15px;
+  }
+  input {
+    width: 180px;
+  }
+  .signup .btn-twitter {
+    margin-bottom: 8px;
+  }
+  .how-explain h3 {
+    text-align: center;
   }
 }

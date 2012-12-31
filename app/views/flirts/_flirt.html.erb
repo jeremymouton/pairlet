@@ -5,10 +5,10 @@
     <i class="icon-heart"></i>
   <% end %>
 
-  <span>
-    <%= truncate(flirt.name, :length => 22) %>
-    <em><%= link_to truncate(flirt.handle, :length => 20), "http://www.#{flirt.provider}.com/#{flirt.handle}" %></em>
-  </span>
+  <div>
+    <span><%= truncate(flirt.name, :length => 36) %></span>
+    <em><%= link_to truncate((flirt.provider.include?('twitter') ? '@' : '') + flirt.handle, :length => 36), "http://www.#{flirt.provider}.com/#{flirt.handle}" %></em>
+  </div>
   
   <%= link_to raw('<i class="icon-remove"></i>'), flirt, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete', :class => 'delete' %>
 

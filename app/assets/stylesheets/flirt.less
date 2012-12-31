@@ -70,10 +70,9 @@ p.info {
 }
 
 .help {
-  border-left: 1px solid #eee;
-  padding-left: 10px;
   color: #aaa;
   font-size: 12px;
+  line-height: 14px;
   
   padding-top: 0;
   b, 
@@ -89,10 +88,6 @@ p.info {
 }
 
 #info {
-  .clone,
-  .help {
-    float:left;
-  }
 
   .profile_img {
     border: 1px solid #eee;
@@ -194,19 +189,24 @@ p.info {
   }
 
   .current-flirt { /* flirt items */
-    padding-left: 2px;
     position: relative;
+    padding-left: 2px;
+    float: left;
+    width: 100%;
     .delete {
       margin-top: 12px;
     }
 
-    span {
+    div {
       padding-left: 12px;
-    }
-    
-    em {
-      display: none;
-      padding-left: 10px;
+      float:left;
+      span {
+        top: 3px;
+        position: relative;
+      }
+      em {
+        display: block;
+      }
       a {
         font-size: 12px;
         color: #888;
@@ -223,16 +223,11 @@ p.info {
     @th: 48px;
 
     img.flirt-avatar {
+      float: left;
       width: @th;
       height: @th;
       background: #eee;
       .border-radius(4px);
-    }
-
-    &:hover {
-      em {
-        display: inline-block;
-      }
     }
   }
 }
@@ -263,6 +258,12 @@ p.info {
   
     &.icon-heart {
       color: @red;
+    }
+  }
+
+  &:hover {
+    .delete {
+      display: block;
     }
   }
 }
@@ -370,5 +371,4 @@ input[type=email],
 input[type=password] {
   .border-radius(0px);
   box-shadow: none;
-  
 }

@@ -43,6 +43,7 @@ jQuery -> # begin ugliest javascript ever
     $($flirt_provider).val('facebook').addClass('hidden')
     $(flirt_handle).attr('placeholder', 'Facebook Username')
     $($info_fb).show()
+    $('.clone').addClass('hidden')
    
     # show FB profile pic
     $($field).on keyup: ->
@@ -57,7 +58,7 @@ jQuery -> # begin ugliest javascript ever
 
     # js validation
     $($field).bind "keypress", (event) ->
-      regex = new RegExp("^[a-z0-9\d_\d.]+$")
+      regex = new RegExp("^[a-zA-Z0-9\d_\d.]+$")
       key = String.fromCharCode((if not event.charCode then event.which else event.charCode))
       unless regex.test(key)
         event.preventDefault()
@@ -75,7 +76,7 @@ jQuery -> # begin ugliest javascript ever
 
     # js validation
     $($field).bind "keypress", (event) ->
-      regex = new RegExp("^[a-z0-9\d_\d.]+$")
+      regex = new RegExp("^[a-zA-Z0-9\d_\d.]+$")
       key = String.fromCharCode((if not event.charCode then event.which else event.charCode))
       unless regex.test(key)
         event.preventDefault()

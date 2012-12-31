@@ -34,31 +34,35 @@ body.pages.index {
     }
   }
 
+  .screenshots {
+    margin-top: 20px;
+    div:first-child {
+      .align-right;
+    }
+
+    img {
+      .box-shadow(0px 1px 8px 1px #7b1a1b);
+    }
+  }
+
   .addthis_toolbox {
     margin-top: 30px;
   }
 
+  .content {
+    .span4 {
+      padding: 15px 0 10px 0;
+    }
+  }
+
   .how {
-    padding: 15px 0 10px 0;
     font-size: 15px;
-    text-align: center;
   }
 
   .how-explain {
     p {
       line-height: 1.3em;
       font-size: 16px;
-    }
-
-    p.disclosure {
-      opacity: 0.4;
-      line-height: 1.1em;
-      margin-top: 30px;
-      font-size: 13px;
-      &:hover {
-        opacity: 1;
-        cursor: default;
-      }
     }
   }
 }
@@ -77,12 +81,11 @@ body.pages.index {
 }
 
 .pixelate {
-  // background: url('layout/pixelated_bg.png');
   text-shadow: 0 1px 0 #5c0000;
   color: @white;
   text-align: center;
-  padding: 23px 0 20px 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   font-weight: normal;
 
   .container-fluid {
@@ -110,10 +113,15 @@ body.pages.index {
 
 .signup {
   font-weight: 200;
-  h2 {
-    font-size: 18px;
-    color: @white;
-    font-weight: 400;
-    margin: 15px 0;
-  }
+  margin-bottom: 30px;
+  p.disclosure {
+      opacity: 0.4;
+      line-height: 1.1em;
+      margin-top: 30px;
+      font-size: 13px;
+      &:hover {
+        opacity: 1;
+        cursor: default;
+      }
+    }
 }
