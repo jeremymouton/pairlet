@@ -4,7 +4,15 @@ class FlirtsController < ApplicationController
   respond_to :html, :json
 
   def index
-    @flirts = current_user.flirts
+    
+    @flirts = current_user.subscribed? ? current_user.flirts : current_user.flirts.limit(1)
+
+    # unless current_user.subscribed?
+    #   @flirts = current_user.flirts.limit(1)
+    # else
+    #   @flirts = current_user.flirts
+    # end
+
     @flirt = Flirt.new
 
     # user accounts - twitter || facebook
@@ -14,7 +22,7 @@ class FlirtsController < ApplicationController
     @providers = Array.new 
     @links.each do |link| 
       @providers << link.provider
-    end 
+    end
 
     # get the user's mutual flirts
     @mutual = Array.new
@@ -25,7 +33,6 @@ class FlirtsController < ApplicationController
         end
       end
     end
-    
   end
 
   def create
@@ -33,9 +40,9 @@ class FlirtsController < ApplicationController
 
     if @flirt.valid?
       @flirt.save
-      redirect_to flirts_path, notice: 'Flirt was successfully created.'
+      redirect_to flirts_path, notice: 'Successfully created new flirt.'
     else
-      redirect_to flirts_path, alert: 'Could not add this person. Make sure the username is valid.'
+      redirect_to flirts_path, alert: "#{(@flirt.errors.full_messages.first).split.drop(1).join(' ')}"
     end
   end
 

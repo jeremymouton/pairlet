@@ -33,7 +33,7 @@
       </div> <!-- #info -->
 
       <div class="currently-flirting">
-        <% if @flirts.any?%>
+        <% if @flirts.any? %>
           <h4>People you are flirting:</h4>
           <% @flirts.each do |flirt| %>
             <%= render 'flirt', :flirt => flirt %>

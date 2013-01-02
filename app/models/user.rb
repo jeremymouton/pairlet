@@ -1,16 +1,13 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-
+  attr_accessible :email, :password, :password_confirmation, :subscribed
 
   
   # INCLUDE DEFAULT DEVISE MODULES. 
   # Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
-
+  devise :database_authenticatable, :registerable, :omniauthable, :recoverable, :trackable, :validatable
   
   # OMNIAUTH AUTHENTICATION
   #
@@ -20,6 +17,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.handle = auth.info.nickname
+      user.subscribed = false
     end
   end
 
@@ -44,6 +42,15 @@ class User < ActiveRecord::Base
     else
       super
     end
+  end
+
+
+
+  # SUBSCRIPTIONS
+  #
+  #
+  def subscribed?
+    self.subscribed
   end
 
 

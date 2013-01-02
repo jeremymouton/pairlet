@@ -1,4 +1,12 @@
 <%= form_for(@flirt, :html => { :class => "form-inline"}) do |f| %>
+
+  <% if @flirt.errors.any? %>
+    <div class="alert alert-error">
+      <% @flirt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </div>
+  <% end %>
     <%= f.select(:provider, options_for_select([['Select network', ''], ['Twitter', 'twitter'], ['Facebook', 'facebook']], 1)) %>
     <%= f.text_field :handle, :placeholder => 'Username', :autocomplete => 'off' %>
 

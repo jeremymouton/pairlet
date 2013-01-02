@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229233506) do
+ActiveRecord::Schema.define(:version => 20130102003709) do
 
   create_table "flirts", :force => true do |t|
     t.string   "handle"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20121229233506) do
     t.string   "provider"
     t.string   "uid"
     t.string   "handle"
+    t.boolean  "subscribed"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -9,16 +9,23 @@ class Flirt < ActiveRecord::Base
 
   # Validations
   PROVIDERS = %w(twitter facebook)
-  validates_presence_of :provider, :handle
-  validates_format_of :handle, :with => /^[a-zA-Z\d_\d.]+$/
-  validates_uniqueness_of(:handle, :scope => [ :provider, :user_id ])
-  validates :provider, :inclusion => {:in => PROVIDERS}
+  validates_presence_of :provider, :handle, :message => "The usernme can't be blank"
+  validates_format_of :handle, :with => /^[a-zA-Z\d_\d.]+$/, :message => "This username is not valid."
+  validates_uniqueness_of(:handle, :scope => [ :provider, :user_id ], :message => "You've already added this person!")
+  validates :provider, :inclusion => { :in => PROVIDERS, :message => "Could not save this person" }
+  validate :flirt_count_within_limit, :on => :create
 
   def default_values
     self.handle = fix_username(self.handle)
     self.matched ||= 'false'
     self.avatar = get_avatar(self.handle)
     self.name = get_name(self.handle)
+  end
+
+  def flirt_count_within_limit # check if user is subscriber or not.
+    if self.user.flirts(:reload).count >= 1 && !user.subscribed?
+      errors.add(:base, "- Exceeded limit. Upgrade your account to add more people.")
+    end
   end
 
   def get_name(username)
