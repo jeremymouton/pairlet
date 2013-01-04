@@ -1,8 +1,8 @@
 <a href="http://www.pairlet.com" title="Pairlet.com"><img src="https://dl.dropbox.com/u/2848831/pairlet.png" alt="" title="Pairlet logo"></a> <br />
-<h2>Hi <%= (@flirted_user_account.name).split[0] %>! We have some good news!</h2>
-<h3><%= @flirting_user_account.name %> flirted you back on Pairlet.</h3><br />
+<h2>Hi <%= (@flirting_user_account.name).split[0] %>! We have some good news!</h2>
+<h3><%= @flirted_user_account.name %> flirted you back on Pairlet.</h3><br />
 
-<p><%= (@flirting_user_account.name).split[0] %>'s <%= @flirting_user_account.provider %> username is <strong><a href="http://www.<%= @flirting_user_account.provider %>.com/<%= @flirting_user_account.handle %>"><%= @flirting_user_account.handle %></a></strong>.<br />
+<p><%= (@flirted_user_account.name).split[0] %>'s <%= @flirted_user_account.provider %> username is <strong><a href="http://www.<%= @flirted_user_account.provider %>.com/<%= @flirted_user_account.handle %>"><%= @flirted_user_account.handle %></a></strong>.<br />
 	They too received this email with your username since you mutually flirted each other.</p>
 
 <p>We'll let you two take it from here. Good luck!</p>
