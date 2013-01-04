@@ -11,6 +11,13 @@
     <%= f.submit "Update", :class => 'btn btn-red' %> 
     <%= link_to "Back", :back, :class => 'link-cancel' %>
   </p>
+
+  <% if current_user.subscribed? %>
+    <br />
+    <h3>Your subscription settings:</h3>
+    <p> <i class="icon-ok"></i> Currently subscribed to Pairlet membership.</p>
+  <% end %>
+
   <p style="padding-top:30px;">Want out? <%= link_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 
   <% end %>

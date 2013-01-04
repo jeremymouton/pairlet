@@ -5,7 +5,7 @@
       <h1>Thanks for signing up!</h1>
       <p>First, you need to authorize at least one of your accounts:</p>
     <% else %>
-    <h1>Add a flirt</h1>
+    <h1><%= current_user.subscribed? ? 'Add a flirt' : 'Add one soulmate' %></h1>
     <div class="row-fluid">
       <div class="span6 box-twitter">
         <i class="icon-twitter"></i>
@@ -34,7 +34,7 @@
 
       <div class="currently-flirting">
         <% if @flirts.any? %>
-          <h4>People you are flirting:</h4>
+          <h4><%= current_user.subscribed? ? 'People you are flirting:' : 'Your soulmate' %></h4>
           <% @flirts.each do |flirt| %>
             <%= render 'flirt', :flirt => flirt %>
           <% end %>
