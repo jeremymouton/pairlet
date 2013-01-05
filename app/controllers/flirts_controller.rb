@@ -48,8 +48,16 @@ class FlirtsController < ApplicationController
 
   def destroy
     @flirt = Flirt.find(params[:id])
+    
+    if @flirt.matched == true
+      @flirted_id = Link.where(:handle => @flirt.handle).first.user_id
+      @relationship = Relationship.where(:flirter_id => current_user.id, :flirted_id => @flirted_id).first
+
+      @relationship.destroy
+    end
+
     @flirt.destroy
-    redirect_to flirts_path, notice: 'Successfully deleted.'
+    redirect_to flirts_path, notice: "Successfully removed."
   end
   
 end
