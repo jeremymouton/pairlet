@@ -1,56 +1,18 @@
 <div class="container span12">
   <div class="span6 add-flirt">
-    
     <% if @providers.empty? %>
       <h1>Thanks for signing up!</h1>
       <p>First, you need to authorize at least one of your accounts:</p>
     <% else %>
-    <h1><%= current_user.subscribed? ? 'Add a flirt' : 'Add one soulmate' %></h1>
-    <div class="row-fluid">
-      <div class="span6 box-twitter">
-        <i class="icon-twitter"></i>
-      </div>
-      <div class="span6 box-facebook">
-        <i class="icon-facebook"></i>
-      </div>
-     
-      <div id="add-form">
-        <%= render :partial => 'form' %>
-      </div> <!-- #add-form -->
-
-      <div id="info">
-        <div class="info-twitter">
-          <span class="btn btn-cancel">cancel</span>
-        </div>
-
-        <div class="info-facebook row-fluid">
-          <span class="profile_img span2">
-            <img src="" class="clone" alt="not"/>
-          </span>
-          <p class="help span10">www.facebook.com/<b>username</b> <br/><em>sometimes has dots and numbers, i.e "john.smith.4"</em></p>
-          <span class="btn btn-cancel">cancel</span>
-        </div>
-      </div> <!-- #info -->
-
-      <div class="currently-flirting">
-        <% if @flirts.any? %>
-          <h4><%= current_user.subscribed? ? 'People you are flirting:' : 'Your soulmate' %></h4>
-          <% @flirts.each do |flirt| %>
-            <%= render 'flirt', :flirt => flirt %>
-          <% end %>
-        <% else %> 
-          <h4>No flirts yet.</h4>
-        <% end %>
-      </div>
-
-    </div> <!-- .row-fluid -->
+      <% if (current_user.subscribed?) || (!current_user.subscribed? && @flirts.empty?) %>
+        <%= render 'flirts/add_flirt' %>
+      <% end %>
+      <%= render 'flirts/currently_flirting' %>
     <% end %>
-   
-    
   </div> <!-- .add-flirt -->
 
   <div class="span6 my-accounts">
-    <%= title "My identifiers" %>
+    <h3>My identifiers</h3>
 
     <div class="row-fluid">
       <% if @links.any? %>

@@ -1,0 +1,14 @@
+<div class="row-fluid">
+  <div class="currently-flirting">
+    <% if @flirts.any? %>
+      <h3><%= current_user.subscribed? ? 'People you are flirting:' : 'Your soulmate' %></h3>
+      <% @flirts.each do |flirt| %>
+        <%= render 'flirt', :flirt => flirt %>
+      <% end %>
+    <% end %>
+
+    <% if current_user.subscribed? && @flirts.empty? %>
+      <h4>No flirts yet.</h4>
+    <% end %>
+  </div>
+</div> <!-- .row-fluid -->

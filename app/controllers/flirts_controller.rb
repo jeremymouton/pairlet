@@ -5,13 +5,14 @@ class FlirtsController < ApplicationController
 
   def index
     
-    @flirts = current_user.subscribed? ? current_user.flirts : current_user.flirts.limit(1)
+    # shorthand is not as readable IMO
+    # @flirts = current_user.subscribed? ? current_user.flirts : current_user.flirts.limit(1)
 
-    # unless current_user.subscribed?
-    #   @flirts = current_user.flirts.limit(1)
-    # else
-    #   @flirts = current_user.flirts
-    # end
+    unless current_user.subscribed?
+      @flirts = current_user.flirts.limit(1)
+    else
+      @flirts = current_user.flirts
+    end
 
     @flirt = Flirt.new
 
@@ -40,7 +41,7 @@ class FlirtsController < ApplicationController
 
     if @flirt.valid?
       @flirt.save
-      redirect_to flirts_path, notice: 'Successfully created new flirt.'
+      redirect_to flirts_path, notice: 'Successfully added new person.'
     else
       redirect_to flirts_path, alert: "#{(@flirt.errors.full_messages.first).split.drop(1).join(' ')}"
     end
