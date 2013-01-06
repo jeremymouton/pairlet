@@ -11,7 +11,7 @@ class Link < ActiveRecord::Base
   def self.create_from_omniauth(auth)
     create! do |link|
       link.provider = auth.provider
-      link.handle = auth.info.nickname.gsub(/[.]/, '').to_s
+      link.handle = auth.info.nickname.gsub(/[.]/, '').to_s.downcase
       link.uid = auth.uid
       link.name = auth.info.name
       link.oauth_token = auth.credentials.token rescue nil

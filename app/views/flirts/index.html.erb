@@ -1,40 +1,14 @@
 <div class="container span12">
   <div class="span6 add-flirt">
     <% if @providers.empty? %>
-      <h1>Thanks for signing up!</h1>
-      <p>First, you need to authorize at least one of your accounts:</p>
+      <%= render 'flirts/welcome' %>
     <% else %>
-      <% if (current_user.subscribed?) || (!current_user.subscribed? && @flirts.empty?) %>
-        <%= render 'flirts/add_flirt' %>
-      <% end %>
+      <%= render 'flirts/add_flirt' %>
       <%= render 'flirts/currently_flirting' %>
     <% end %>
   </div> <!-- .add-flirt -->
 
   <div class="span6 my-accounts">
-    <h3>My identifiers</h3>
-
-    <div class="row-fluid">
-      <% if @links.any? %>
-        <% @links.each do |link| %>
-          <%= render 'links/link', :link => link %>
-        <% end %>
-      <% end %>
-    </div>
-
-    <% unless @providers.include? 'twitter'  %>
-      <div class="account-twitter">
-        <i class="icon-twitter-sign"></i>
-        <span><%= link_to "Authorize my Twitter account", user_omniauth_authorize_path(:twitter) %></span>
-      </div>
-    <% end %>
-    <% unless @providers.include? 'facebook' %>
-      <div class="account-facebook">
-        <i class="icon-facebook-sign"></i>
-        <span><%= link_to "Authorize my Facebook account", user_omniauth_authorize_path(:facebook) %></span>
-      </div>
-    <% end %>
+    <%= render 'links/my_accounts' %>
   </div>
-
-    
 </div>

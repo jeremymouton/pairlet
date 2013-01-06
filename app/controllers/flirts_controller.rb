@@ -4,12 +4,10 @@ class FlirtsController < ApplicationController
   respond_to :html, :json
 
   def index
-    
     # shorthand is not as readable IMO
     # @flirts = current_user.subscribed? ? current_user.flirts : current_user.flirts.limit(1)
-
     unless current_user.subscribed?
-      @flirts = current_user.flirts.limit(1)
+      @flirts = current_user.flirts.limit(5)
     else
       @flirts = current_user.flirts
     end
@@ -19,7 +17,7 @@ class FlirtsController < ApplicationController
     # user accounts - twitter || facebook
     @links = current_user.links
     
-    # get the providers 
+    # get the providers
     @providers = Array.new 
     @links.each do |link| 
       @providers << link.provider
@@ -50,10 +48,11 @@ class FlirtsController < ApplicationController
   def destroy
     @flirt = Flirt.find(params[:id])
     
+    # delete the flirter -> flirted relationship too 
+    # if the flirt had been matched to a user
     if @flirt.matched == true
       @flirted_id = Link.where(:handle => @flirt.handle).first.user_id
       @relationship = Relationship.where(:flirter_id => current_user.id, :flirted_id => @flirted_id).first
-
       @relationship.destroy
     end
 

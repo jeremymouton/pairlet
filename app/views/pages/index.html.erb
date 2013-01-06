@@ -1,18 +1,73 @@
-  <div class="pixelate">
+<div class="top_section">
+  <div class="container">
+    <%= link_to root_path, :id => 'csslogo' do %>
+      <div class="flirt">pairlet</div>
+      <div class="heart">
+        <span class="section1"></span>
+        <span class="section2"></span>
+        <span class="section3"></span>
+        <span class="section4"></span>
+        <span class="section5"></span>
+      </div>
+    <% end %>
+    <h1 class="scale">
+      a real-life social game for singles
+    </h1>
+
+    <div class="login scale">
+      <p>Sign in or sign up with <%= link_to raw('<i class="icon-twitter"></i> twitter'), user_omniauth_authorize_path(:twitter), :class => 'btn btn-twitter' %> or <%= link_to raw('<i class="icon-facebook"></i> facebook'), user_omniauth_authorize_path(:facebook), :class => 'btn btn-facebook' %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pixelate">
+  <div class="container">
     <h1 class="scale">Have you ever wondered how someone felt about you?</h1>
     <p class="scale">Pairlet can let you know when there is mutual interest.</p>
-    <p>Connect your Twitter and Facebook accounts, then start adding the people you fancy.</p>
-  </div>
+    <em>Connect your Twitter and Facebook accounts, then start adding the people you fancy.</em>
 
-  <div class="container-fluid">
     <div class="row-fluid">
-      <div class="span4">
+      <div class="span6 screenshots">
+        <%= image_tag 'slides/screenshots.png' %>
+      </div>
+
+      <div class="span6 how">
+        <h2>How it works</h2>
+        <div class="table">
+          <p><strong>1</strong> Sign up and connect your Twitter &amp; Facebook accounts so others can find you.</p>
+          <p><strong>2</strong> Add people using their Twitter or Facebook usernames.</p>
+          <p><strong>3</strong> Let Pairlet handle the rest.</p> 
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom_section">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="how_explain span6 pull-right">
+        <h3>The catch</h3>
+        <p>The person you add as a soulmate won't be notified when you add them, and you won't know when someone adds you either.</p>
+        <p><em>You will only find out if you both add each other.</em></p>
+        <p>When Pairlet finds a mutual connection, you will automatically be notified via email.</p>
+        <p>No hard feelings, no rejections, no awkward moments. <em class="red">Happy matching.</em></p>
+      </div>
+      <div class="more span6">
+        <h3>
+          Accessible from any device
+          <span>internet enabled phones, tablets and personal computers</span>
+        </h3>
         <div class="signup">
-          <h2>Sign in or sign up:</h2>
+          <h3>
+            Sign up for a soulmate account
+            <span>and add up to 5 people, <span>it’s free.</span></span>
+          </h3>
           <p>
-            <%= link_to raw('<i class="icon-twitter"></i> Sign in with Twitter'), user_omniauth_authorize_path(:twitter), :class => 'btn btn-twitter' %>
+            <%= link_to raw('<i class="icon-twitter"></i> twitter'), user_omniauth_authorize_path(:twitter), :class => 'btn btn-twitter' %>
             
-            <%= link_to raw('<i class="icon-facebook"></i> Sign in with Facebook'), user_omniauth_authorize_path(:facebook), :class => 'btn btn-facebook' %>
+            <%= link_to raw('<i class="icon-facebook"></i> facebook'), user_omniauth_authorize_path(:facebook), :class => 'btn btn-facebook' %>
           </p>
           <p class="disclosure">
             <small>
@@ -21,41 +76,21 @@
             </small>
           </p>
         </div>
-      </div>
-      <div class="span4 how">
-        <h2>How it works:</h2>
-        <p><strong>1.</strong> Sign up and connect your Twitter &amp; Facebook accounts so others can find you.</p>
-        <p><strong>2.</strong> Add people using their Twitter or Facebook usernames.</p>
-        <p><strong>3.</strong> Let Pairlet handle the rest.</p>  
-      </div>
-      <div class="how-explain span4">
-        <h2>The catch:</h2>
-        <p>The people you add as "Flirts" won't be notified that you added them, and you won't know when someone adds you either. You will only find out if you both add each other.</p>
-        <p>When Pairlet finds a mutual connection, you will automatically be notified via email.</p>
-        <p>No hard feelings, no rejections, no awkward moments. Happy flirting.</p>
-      </div>
-    </div>
-  </div>
+      </div> <!-- .more -->
 
-  <div class="row-fluid screenshots">
-    <div class="span6">
-      <%= image_tag 'slides/screen2.jpg' %>
-    </div>
-    <div class="span6">
-      <%= image_tag 'slides/screen1.jpg' %>
-    </div>
-  </div>
+      <div class="clear center footer">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+          <a class="addthis_button_facebook_like" fb:like:layout="button_count" ></a>
+          <a class="addthis_button_tweet"></a>
+          
+        </div>
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50db50097b257089"></script>
+        <!-- AddThis Button END -->
 
-  <div class="row-fluid">
-    <div class="span4 offset4 center">
-      <!-- AddThis Button BEGIN -->
-      <div class="addthis_toolbox addthis_default_style ">
-        <a class="addthis_button_facebook_like" fb:like:layout="button_count" ></a>
-        <a class="addthis_button_tweet"></a>
-        
-      </div>
-      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50db50097b257089"></script>
-      <!-- AddThis Button END -->
-    </div>
-  </div>
+        <%= render :partial => 'layouts/footer' %>
+      </div> <!-- .footer -->
+    </div> <!-- .row-fluid -->
+  </div> <!-- .container -->
+</div> <!-- .bottom_section -->

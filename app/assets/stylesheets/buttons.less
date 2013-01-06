@@ -38,38 +38,33 @@
     text-shadow: none;
   }
 
+  // Signup buttons
+    
   &.btn-twitter,
   &.btn-facebook {
-    font-size: 14px;
-    text-align: left;
+    margin-top: 20px;
+    background: none;
+    font-size: 35px;
+    font-weight: 200;
+    .box-shadow(none);
+
     i {
-      font-size: 18px;
+      font-size: 38px;
       position: relative;
       top: 2px;
     }
+
+    &:active {
+      .box-shadow(none);
+    }
   }
 
-
   &.btn-twitter {
-    .border-radius(0px);
-    border: none;
-    text-shadow: none;
-    #gradient > .vertical(@tw, @tw);
-    color: @white;
-    i {
-      left: -3px;
-    }
+    color: @tw;
   }
 
   &.btn-facebook {
-    .border-radius(0px);
-    border: none;
-    text-shadow: none;
-    #gradient > .vertical(@fb, @fb);
-    color: @white;
-    i {
-      padding-right: 9px;
-    }
+    color: @fb;
   }
 }
 

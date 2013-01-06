@@ -10,20 +10,46 @@
     padding-top: 65px;
   }
 
-  .signup {
-    .btn-twitter {
-      margin-bottom: 8px;
-    }
-  }
-
   .delete {
     display: none;
+  }
+
+  // offset the screenshot
+
+  @offset: 93px;
+  .pixelate div.screenshots {
+    margin-bottom: -@offset;
+    margin-top: 59px;
+  }
+
+  div.more {
+    margin-top: @offset;
+  }
+
+  .pixelate .how .table strong {
+    height: 35px;
+  }
+
+  .container {
+    padding: 0 20px;  
   }
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
   .help.span10 {
     width: 79.872928%;
+  }
+
+  .container {
+    padding: 0 20px;  
+  }
+
+  .bottom_section .more {
+    margin-top: 17px;
+  }
+
+  .bottom_section .how_explain {
+    font-size: 22px;
   }
 }
 
@@ -44,26 +70,43 @@
     border-left: 0;
   }
 
-  .signup {
-    .btn-twitter {
-      margin-bottom: 8px;
-    }
+  .pixelate .how .table strong {
+    height: 50px;
+  }
+
+  .pixelate .how {
+    margin-top: 0;
   }
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+
+  body.pages.index {
+    padding: 0;  
+    .container {
+      padding: 0 20px;  
+    }
+  }
+
+  .bottom_section .how_explain {
+    background: none;
+    padding-top: 25px;
+  }
+
+  .bottom_section .more {
+    margin-top: 0px;
+    .pull-left;
+    
+    > h3 {
+      padding-top: 50px;
+    }
+  }
+
   .flirts .box-twitter,
   .flirts .box-facebook {
     width: 49%;
     .pull-left;
-  }
-
-  .signup {
-    text-align: center;
-    .btn-twitter {
-      margin-bottom: 0px;
-    }
   }
 
   .screenshots {
@@ -71,6 +114,15 @@
       text-align: center !important;
       margin-bottom: 10px;
     }
+  }
+
+  .pixelate .how {
+    .pull-left;
+    margin-bottom: 15px;
+  }
+
+  .pixelate .how .table strong {
+    height: 25px;
   }
 
   .how {
@@ -99,6 +151,10 @@
     padding-left: 15px;
   }
 
+  h1 span.scale {
+    font-size: 22px;
+  }
+
   input {
     width: 180px;
   }
@@ -115,11 +171,19 @@
     }
   }
 
-  .current-flirt {
-    &:hover {
-      em {
-        // display: none;
-      }
+  .signup {
+    text-align: left;
+  }
+
+  div.more {
+    margin-top: 35px;
+    h3 {
+      margin: 40px 0 30px 0;
+      float: left;
     }
+  }
+
+  .pixelate .how .table strong {
+    height: 56px;
   }
 }

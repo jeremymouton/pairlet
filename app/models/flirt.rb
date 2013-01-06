@@ -23,8 +23,8 @@ class Flirt < ActiveRecord::Base
   end
 
   def flirt_count_within_limit # check if user is subscriber or not.
-    if self.user.flirts(:reload).count >= 1 && !user.subscribed?
-      errors.add(:base, "- Exceeded limit. Upgrade your account to add more people.")
+    if self.user.flirts(:reload).count >= 5 && !user.subscribed?
+      errors.add(:base, "- Can't add more, you've already added 5 people.")
     end
   end
 

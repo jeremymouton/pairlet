@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.handle = auth.info.nickname
+      user.handle = auth.info.nickname.gsub(/[.]/, '').to_s.downcase
       user.subscribed = false
     end
   end
