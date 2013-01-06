@@ -12613,7 +12613,7 @@ if (typeof module !== 'undefined' && module.exports) {
     });
     return setTimeout(function() {
       $('.alert').fadeOut('slow');
-      return $('.alert').parent().hide();
+      return $('.alert').parent().parent().hide();
     }, 2200);
   });
 

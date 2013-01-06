@@ -30,7 +30,7 @@
 
   <%= render :partial => 'layouts/header' %>
   
-  <% if flash_messages %>
+  <% if flash_messages && user_signed_in? %>
     <div class="row-fluid">
       <%= flash_messages %>
     </div>

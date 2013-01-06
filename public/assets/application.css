@@ -9644,7 +9644,7 @@ body.pages.index .footer p a {
 .top_section {
   background: #f5f7f8 url('layout/noisy_bg.jpg');
   text-align: center;
-  padding-top: 20px;
+  padding-top: 35px;
   position: relative;
   -webkit-box-shadow: 0 2px 41px #470b0e;
   -moz-box-shadow: 0 2px 41px #470b0e;
@@ -9743,10 +9743,12 @@ body.pages.index .footer p a {
   text-align: left;
   font-size: 15px;
   margin-top: 35px;
+  max-width: 460px;
 }
 .pixelate .how h2 {
-  font-size: 28px;
-  font-weight: bold;
+  font-weight: 100;
+  font-size: 52px;
+  margin-bottom: 25px;
   text-shadow: 0 1px 6px #640a0a;
 }
 .pixelate .how h2 i {
@@ -9804,11 +9806,12 @@ body.pages.index .footer p a {
 .bottom_section .how_explain {
   padding-top: 35px;
   color: #9f9f9f;
-  font-size: 27px;
+  font-size: 22px;
 }
 .bottom_section .how_explain h3 {
-  font-weight: bold;
-  font-size: 32px;
+  font-weight: 100;
+  font-size: 44px;
+  margin-bottom: 25px;
 }
 .bottom_section .how_explain p {
   font-weight: 200;
@@ -9885,15 +9888,6 @@ body.pages.index .footer p a {
   position: relative;
   left: 37px;
   font-weight: normal;
-}
-#csslogo .flirt:after {
-  content: 'ß';
-  color: #ddd;
-  font-weight: 200;
-  font-size: 11px;
-  top: -15px;
-  right: 33px;
-  position: absolute;
 }
 #csslogo:hover {
   text-decoration: none;
@@ -10351,6 +10345,9 @@ input[type=password] {
   .container {
     padding: 0 20px;
   }
+  .bottom_section .how_explain {
+    padding: 40px 20px 0 33px;
+  }
 }
 @media (max-width: 979px) and (min-width: 768px) {
   .help.span10 {
@@ -10382,7 +10379,13 @@ input[type=password] {
     height: 50px;
   }
   .pixelate .how {
-    margin-top: 0;
+    margin-top: 10px;
+  }
+  .pixelate .screenshots {
+    margin-top: 50px;
+  }
+  .bottom_section .how_explain {
+    padding: 40px 20px 0 33px;
   }
 }
 /* Landscape phone to portrait tablet */
@@ -10396,6 +10399,7 @@ input[type=password] {
   .bottom_section .how_explain {
     background: none;
     padding-top: 25px;
+    padding: 40px 20px 0 20px;
   }
   .bottom_section .more {
     margin-top: 0px;

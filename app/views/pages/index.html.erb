@@ -1,4 +1,9 @@
 <div class="top_section">
+  <% if flash_messages %>
+    <div class="row-fluid" style="padding-bottom:30px;">
+      <%= flash_messages %>
+    </div>
+  <% end %>
   <div class="container">
     <%= link_to root_path, :id => 'csslogo' do %>
       <div class="flirt">pairlet</div>
