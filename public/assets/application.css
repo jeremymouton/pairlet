@@ -10468,7 +10468,7 @@ input[type=password] {
   }
   div.more h3 {
     margin: 40px 0 30px 0;
-    float: left;
+    font-size: 24px;
   }
   .pixelate .how .table strong {
     height: 56px;

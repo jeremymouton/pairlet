@@ -12601,7 +12601,7 @@ if (typeof module !== 'undefined' && module.exports) {
   jQuery(function() {
     $("h1.scale").fitText(1, {
       minFontSize: '26px',
-      maxFontSize: '62px'
+      maxFontSize: '61px'
     });
     $("p.scale").fitText(1, {
       minFontSize: '16px',

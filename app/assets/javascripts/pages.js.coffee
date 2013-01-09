@@ -4,7 +4,7 @@
 
 jQuery ->
 
-	$("h1.scale").fitText(1, { minFontSize: '26px', maxFontSize: '62px' })
+	$("h1.scale").fitText(1, { minFontSize: '26px', maxFontSize: '61px' })
 	$("p.scale").fitText(1, { minFontSize: '16px', maxFontSize: '22px' })
 	$(".login.scale p").fitText(1, { minFontSize: '16px', maxFontSize: '32px' })
 	
