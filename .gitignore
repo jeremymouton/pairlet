@@ -17,3 +17,4 @@
 config/third_party_keys.yml
 
 config/heroku_env.rb
+config/database.yml
